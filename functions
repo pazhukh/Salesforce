@@ -13,7 +13,10 @@ List<Contact> conList = new List<Contact> {
 insert conList;
 
 //upsert records
+update sObjectList;
 upsert sObjectList Account.Fields.MyExternalId;
+delete sObjectList;
+
 
 
 
