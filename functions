@@ -17,6 +17,13 @@ update sObjectList;
 upsert sObjectList Account.Fields.MyExternalId;
 delete sObjectList;
 
+Database.insert()
+Database.update()
+Database.upsert()
+Database.delete()
+Database.undelete()
+Database.merge()
+
 
 
 
