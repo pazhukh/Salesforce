@@ -1,3 +1,7 @@
+*********************************************************
+********insert, update, upsert, delete, undelete*********
+*********************************************************
+
 // Create a list of contacts
 List<Contact> conList = new List<Contact> {
     new Contact(FirstName='Joe',LastName='Smith',Department='Finance'),
@@ -8,11 +12,14 @@ List<Contact> conList = new List<Contact> {
 // Bulk insert all contacts with one DML call
 insert conList;
 
+//upsert records
+upsert sObjectList Account.Fields.MyExternalId;
 
 
 
-
-//try/catch
+*********************************************************
+*********************try/catch***************************
+*********************************************************
 try {
     // This causes an exception because 
     //   the required Name field is not provided.
