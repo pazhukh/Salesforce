@@ -1,0 +1,11 @@
+*************SOSL***************
+List<List<SObject>> searchList = [FIND 'SFDC' IN ALL FIELDS RETURNING Account(Name), Contact(FirstName,LastName)];
+ALL FIELDS
+NAME FIELDS
+EMAIL FIELDS
+PHONE FIELDS
+SIDEBAR FIELDS
+
+***************SOQL***************
+[SELECT Name, (SELECT FirstName,LastName FROM Contacts) FROM Account];
+SELECT Name, (SELECT Name FROM Students__r) FROM Course__c;
