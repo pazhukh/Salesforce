@@ -5,3 +5,8 @@ after insert
 after update
 after delete
 after undelete
+
+Trigger.new
+Trigger.old
+Trigger.oldMap
+Trigger.oldMap
