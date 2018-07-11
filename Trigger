@@ -19,6 +19,7 @@ Trigger ContextExampleTrigger on Account (before insert, after insert, after del
     }
 }
 
+https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_triggers_context_variables_considerations.htm
 before insert
 before update
 before delete
