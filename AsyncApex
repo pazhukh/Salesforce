@@ -1,0 +1,32 @@
+//**//**Scheduable**//**//
+@isTest
+public class DailyLeadProcessorTest {
+	public static String CRON_EXP = '2 47 16 13 7 ? 2018';//коли ми запустим код
+    
+    static testMethod void testScheduledJob(){
+        List<Lead> newLeads = new List<Lead>();
+        for(Integer i = 1; i <= 200; i++){
+           Lead newLead = new Lead(LastName='Lead' + i, 
+                                   Company='Company' + i, 
+                                  Status='Open - Not Contracted');
+            newLeads.add(newLead);
+        }
+        insert newLeads;
+        
+        String jobId = System.schedule('ScheduledApexTest',
+            CRON_EXP, 
+            new DailyLeadProcessor());//створює екземпляр класа через певний час, який вставили в 
+            //public static String CRON_EXP
+    }
+}
+
+//метод який запуститься в майбутньому
+global class DailyLeadProcessor implements Schedulable{
+	global void execute(SchedulableContext ctx) {
+    	List<Lead> first200Lead = [SELECT Name FROM Lead WHERE LeadSource=null LIMIT 200];
+        for(Lead oneLead : first200Lead){
+            oneLead.LeadSource = 'Dreamforce';
+        }
+        update first200Lead;
+    }
+}
