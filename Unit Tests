@@ -1,4 +1,7 @@
 System.assertEquals();
+ Test.startTest();
+ Test.stopTest();
+
 
 @isTest
 private class TemperatureConverterTest {
