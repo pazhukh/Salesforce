@@ -1,0 +1,17 @@
+*****************
+*****Таблиця*****
+*****************
+<apex:pageBlockTable value="{! Account.contacts}" var="cont">
+            <apex:column>
+            	<apex:outputLink value="{! URLFOR($Action.Contact.Edit, cont.Id)}">
+                	Edit
+                </apex:outputLink>
+                &nbsp;
+                <apex:outputLink value="{! URLFOR($Action.Contact.Delete, cont.Id)}">
+                	Del
+                </apex:outputLink>
+            </apex:column>
+            <apex:column value="{!cont.Name}"/>
+            <apex:column value="{!cont.Title}"/>
+            <apex:column value="{!cont.Phone}"/>
+        </apex:pageBlockTable>
