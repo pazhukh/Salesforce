@@ -1,0 +1,2 @@
+$A.get("e.force:navigateToURL").setParams(
+    {"url": "/apex/pageName?&id=00141000004jkU0AAI"}).fire();
