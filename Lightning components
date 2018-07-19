@@ -1,2 +1,12 @@
 https://developer.salesforce.com/docs/component-library/bundle/lightning:input/example#lightningcomponentdemo:exampleInputEmail
 
+//controller
+
+({
+	click : function(component, event, helper) {
+		    console.log('clicked');
+        var btnClicked = event.getSource();
+        console.log(btnClicked);
+        var btnMessage = btnClicked.get("v.variant");
+	}
+})
