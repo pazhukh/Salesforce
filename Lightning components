@@ -1,7 +1,11 @@
 https://developer.salesforce.com/docs/component-library/bundle/lightning:input/example#lightningcomponentdemo:exampleInputEmail
 
-//controller
+//стилі для компонентів
+extends="force:slds"
+https://lightningdesignsystem.com
 
+
+//controller
 ({
 	click : function(component, event, helper) {
         var btnClicked = event.getSource();
