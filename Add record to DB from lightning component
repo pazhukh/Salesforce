@@ -1,0 +1,99 @@
+******************
+****APEX CLASS****
+******************
+public with sharing class sportInsert {
+	@AuraEnabled
+    public static List<Sport__c> getSportsFromDB(){
+        return [SELECT Name, Abb__c, Country__c FROM Sport__c];
+    }
+    
+    @AuraEnabled
+    public static Sport__c insertSportToDB(Sport__c newSport){
+        insert newSport;
+        return newSport;
+    }
+}
+
+
+******************
+****Main Component****
+******************
+<aura:component controller="sportInsert">
+    
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}" />
+    
+    <aura:attribute name="allSports" type="Sport__c[]" />
+    <aura:attribute name="newSport" type="Sport__c" default="{'Name' : '', 'Abb__c' : '', 'Country__c': ''}"/>
+    
+    <form>
+        <lightning:input aura:id="sportField" type="text" label="Sport Name" value="{!v.newSport.Name}" required="true"/>
+        <lightning:input aura:id="sportField" type="text" label="Abbreviature" value="{!v.newSport.Abb__c}" required="true"/>
+        <lightning:input aura:id="sportField" type="text" label="Country" value="{!v.newSport.Country__c}" required="true"/>
+        <br/>
+        <lightning:button variant="success" label="Add Sport" onclick="{!c.createSport}"/>
+    </form>
+    <ul>
+        <aura:iteration items="{!v.allSports}" var="sport">
+            <li>Name==>{!v.sport.Name}, Abb==>{!v.sport.Abb__c}, Country==>{!v.sport.Country__c}</li>
+        </aura:iteration>
+    </ul>
+    
+</aura:component>
+
+******************
+****Controller****
+******************
+({
+    //create record localy and show in Frontend
+	createSport : function(component, event, helper) {
+        // Show error messages if required fields are blank
+        var checkValid = component.find('sportField').reduce(function (validFields, inputCmp) {
+            inputCmp.showHelpMessageIfInvalid();
+            return validFields && inputCmp.get('v.validity').valid;
+        }, true);
+        if(checkValid){
+            //insert to BD
+            var allSports = component.get("v.allSports");
+            var newSport = component.get("v.newSport");
+           	var insertToDB = component.get('c.insertSportToDB');
+            insertToDB.setParams({
+                newSport: newSport
+            })
+            //check if insert SUCCESS
+            insertToDB.setCallback(this, function(response){
+                var state = response.getState();
+                if(state == "SUCCESS"){
+                    //show all sports in Frontend
+                    allSports.unshift(newSport);
+                    component.set("v.allSports", allSports);
+                } else {
+                    alert(state);
+                }
+            })
+            $A.enqueueAction(insertToDB);
+            //reset form
+            component.set("v.newSport", {'Name': '', 'Abb__c' : '', 'Country__c' : ''})
+        }
+	},
+    
+    //get records from DB and show in Fronend
+    doInit : function(component, event, helper){
+        var action = component.get('c.getSportsFromDB');
+        action.setCallback(this, function(response){
+            var state = response.getState();
+            if(state == 'SUCCESS'){
+                component.set('v.allSports', response.getReturnValue());
+            }
+        })
+        $A.enqueueAction(action);
+    }
+})
+
+
+****************************
+****Sport item component****
+****************************
+<aura:component>
+    <aura:attribute name="sport" type="Sport__c" />
+	<li>Name==>{!v.sport.Name}, Abb==>{!v.sport.Abb__c}, Country==>{!v.sport.Country__c}</li>
+</aura:component>
