@@ -1,4 +1,5 @@
 https://developer.salesforce.com/docs/component-library/bundle/lightning:input/example#lightningcomponentdemo:exampleInputEmail
+https://developer.salesforce.com/docs/component-library/bundle/lightning:tab/example
 
 //стилі для компонентів
 extends="force:slds"
