@@ -15,4 +15,5 @@ https://lightningdesignsystem.com
 	}
 })
 
-$a.util
+<lightning:spinner aura:id="spinner" variant="brand" size="large" class="slds-hide"/>
+$A.util.addClass(component.find('spinner'), 'slds-hide');
