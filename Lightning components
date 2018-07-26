@@ -14,3 +14,5 @@ https://lightningdesignsystem.com
 	var name = component.find("name").get("v.value"); //aura:id="name"
 	}
 })
+
+$a.util
