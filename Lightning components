@@ -21,3 +21,7 @@ https://lightningdesignsystem.com
 
 <lightning:spinner aura:id="spinner" variant="brand" size="large" class="slds-hide"/>
 $A.util.addClass(component.find('spinner'), 'slds-hide');
+
+//events
+const rerenderEvent = $A.get('e.c:rerenderEvent');
+rerenderEvent.fire();
