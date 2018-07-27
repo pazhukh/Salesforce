@@ -4,6 +4,9 @@ https://developer.salesforce.com/docs/component-library/bundle/lightning:tab/exa
 deleting records 
 https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/apex_records_delete.htm
 
+auraErrorHandling
+https://developer.salesforce.com/blogs/2017/09/error-handling-best-practices-lightning-apex.html?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+SforceBlog+%28Salesforce+Developers+Blog%29
+
 
 //стилі для компонентів
 extends="force:slds"
