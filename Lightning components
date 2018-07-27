@@ -7,6 +7,11 @@ https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/apex_
 auraErrorHandling
 https://developer.salesforce.com/blogs/2017/09/error-handling-best-practices-lightning-apex.html?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+SforceBlog+%28Salesforce+Developers+Blog%29
 
+Application events
+https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/events_application_create.htm
+
+Component events
+https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/events_component_create.htm
 
 //стилі для компонентів
 extends="force:slds"
