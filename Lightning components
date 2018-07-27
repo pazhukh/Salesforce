@@ -25,3 +25,4 @@ $A.util.addClass(component.find('spinner'), 'slds-hide');
 //events
 const rerenderEvent = $A.get('e.c:rerenderEvent');
 rerenderEvent.fire();
+component.getEvent('createNewTourn').fire();
