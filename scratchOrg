@@ -1,2 +1,9 @@
 create new scratch org and set it as default
 sfdx force:org:create -s -f config/project-scratch-def.json -a "default scratch org"
+
+Login to new devhub
+$ sfdx force:auth:logout -u devhub
+$ sfdx force:auth:web:login -a devHub -d
+$ sfdx force:org:list
+$ sfdx force:org:create -s -f config/project-scratch-def.json -a workScratch -d 30
+
