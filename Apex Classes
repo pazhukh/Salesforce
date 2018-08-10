@@ -1,0 +1,14 @@
+String queryAllAppliedPaticipants = 'SELECT ' 
+                                            + 'Name ' 
+                                            + 'FROM ' 
+                                            + participantSobject 
+                                            + ' WHERE ' 
+                                            + participantSobject + '.ID IN ' 
+                                            + '(SELECT ' 
+                                            + participantSobject
+                                            + ' FROM ' 
+                                            + junctionSobject 
+                                            + ' WHERE ' 
+                                            + 'Tournament__c =:tournamentId)';
+		
+List<SObject> allAppliedPlayersToRRTournament =  Database.query(queryAllAppliedPaticipants);
