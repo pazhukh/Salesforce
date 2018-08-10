@@ -1,0 +1,2 @@
+create new scratch org and set it as default
+sfdx force:org:create -s -f config/project-scratch-def.json -a "default scratch org"
