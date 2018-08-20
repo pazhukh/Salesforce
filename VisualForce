@@ -15,3 +15,18 @@
             <apex:column value="{!cont.Title}"/>
             <apex:column value="{!cont.Phone}"/>
         </apex:pageBlockTable>
+
+//список контактів
+<apex:page standardController="Contact" recordSetVar="contacting">
+    <apex:pageBlock title="Contacts List">
+        
+        <!-- Contacts List -->
+        <apex:pageBlockTable value="{! contacting }" var="ct">
+            <apex:column value="{! ct.FirstName }"/>
+            <apex:column value="{! ct.LastName }"/>
+            <apex:column value="{! ct.Email }"/>
+            <apex:column value="{! ct.Account.Name }"/>
+        </apex:pageBlockTable>
+        
+    </apex:pageBlock>
+</apex:page>
