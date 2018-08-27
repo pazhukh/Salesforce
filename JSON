@@ -1,0 +1,11 @@
+//достукатися до всіх полів матчів
+String responseFromServer = '[{"match":{"id":132093802,"tournament_id":4963832}},{"match":{"id":12312, "tournament_id":4963832}}]';
+List<Object> matchList = (List<Object>)JSON.deserializeUntyped(responseFromServer);
+for(Object match : matchList){
+    
+    Map<String, Object> data = (Map<String, Object>)match;
+	
+    Map<String, Object> matchInfo = (Map<String, Object>) JSON.deserializeUntyped(JSON.serialize(data.get('match')));
+    
+    System.debug(matchInfo.get('id'));
+}
