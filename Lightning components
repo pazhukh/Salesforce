@@ -1,6 +1,9 @@
 https://developer.salesforce.com/docs/component-library/bundle/lightning:input/example#lightningcomponentdemo:exampleInputEmail
 https://developer.salesforce.com/docs/component-library/bundle/lightning:tab/example
 
+//щоб компоненту можна було додати до Lightning App Builder
+додаємо implements="flexipage:availableForAllPageTypes"
+
 deleting records 
 https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/apex_records_delete.htm
 
