@@ -2,9 +2,10 @@ https://developer.salesforce.com/docs/component-library/bundle/lightning:input/e
 https://developer.salesforce.com/docs/component-library/bundle/lightning:tab/example
 
 //щоб компоненту можна було додати до App Builder, Tabs і так далі...
-Lightning App Builder implements="flexipage:availableForAllPageTypes"
 https://developer.salesforce.com/docs/atlas.en-us.214.0.lightning.meta/lightning/components_config_for_app_builder.htm
+Lightning App Builder implements="flexipage:availableForAllPageTypes"
 Tabs implements="force:appHostable"
+Quick action implements="force:lightningQuickAction"
 
 
 deleting records 
