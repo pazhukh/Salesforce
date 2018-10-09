@@ -2,3 +2,19 @@
 https://www.tutorialspoint.com/apex/apex_data_types.htm
 Sertifications
 https://quizlet.com/116767571/salesforce-app-builder-certification-flash-cards/
+
+
+Map<String, List<Schedule__c>> scheduleRecordsMap = new Map<String, List<Schedule__c>>();
+
+Test.startTest();
+Test.stopTest();
+
+//fill map by keys(quoteLineItem Payment Type) and values (Schedule__c records)
+        Map<String, List<Schedule__c>> scheduleRecordsMap = new Map<String, List<Schedule__c>>();
+        for(Schedule__c scheduleRelatedRecord : scheduleRelatedRecords) {
+            if(scheduleRecordsMap.containsKey(scheduleRelatedRecord.Option_Item__r.Payment_Type__c)){
+                scheduleRecordsMap.get(scheduleRelatedRecord.Option_Item__r.Payment_Type__c).add(scheduleRelatedRecord);
+            } else {
+                scheduleRecordsMap.put(scheduleRelatedRecord.Option_Item__r.Payment_Type__c, new List<Schedule__c>{scheduleRelatedRecord});
+            }
+        }
