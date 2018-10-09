@@ -18,3 +18,6 @@ Test.stopTest();
                 scheduleRecordsMap.put(scheduleRelatedRecord.Option_Item__r.Payment_Type__c, new List<Schedule__c>{scheduleRelatedRecord});
             }
         }
+
+for(String keyInMap : myMap.keySet()) {}
+for(sObject object : myMap.values()){}
