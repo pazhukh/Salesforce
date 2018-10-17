@@ -1,3 +1,5 @@
+@testSetup
+
 System.assertEquals();
  Test.startTest();
  Test.stopTest();
