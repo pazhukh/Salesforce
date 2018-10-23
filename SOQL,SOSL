@@ -1,4 +1,5 @@
-*************SOSL***************
+
+************************************************************SOSL*********************************************
 List<List<SObject>> searchList = [FIND 'SFDC' IN ALL FIELDS RETURNING Account(Name), Contact(FirstName,LastName)];
 ALL FIELDS
 NAME FIELDS
@@ -6,6 +7,25 @@ EMAIL FIELDS
 PHONE FIELDS
 SIDEBAR FIELDS
 
-***************SOQL***************
+************************************************************SOQL*********************************************
+
 [SELECT Name, (SELECT FirstName,LastName FROM Contacts) FROM Account];
 SELECT Name, (SELECT Name FROM Students__r) FROM Course__c;
+
+//*/*/*/*/*/*/*//
+Динамічна Кверя
+String queryAllAppliedPaticipants = 'SELECT ' 
+                                            + 'Name ' 
+                                            + 'FROM ' 
+                                            + participantSobject 
+                                            + ' WHERE ' 
+                                            + participantSobject + '.ID IN ' 
+                                            + '(SELECT ' 
+                                            + participantSobject
+                                            + ' FROM ' 
+                                            + junctionSobject 
+                                            + ' WHERE ' 
+                                            + 'Tournament__c =:tournamentId)';
+		
+List<SObject> allAppliedPlayersToRRTournament =  Database.query(queryAllAppliedPaticipants);
+
