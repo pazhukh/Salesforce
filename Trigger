@@ -30,4 +30,4 @@ after undelete
 Trigger.new
 Trigger.old
 Trigger.oldMap
-Trigger.oldMap
+Trigger.newMap
