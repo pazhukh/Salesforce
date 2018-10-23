@@ -1,7 +1,18 @@
 $A.get("e.force:navigateToURL").setParams(
     {"url": "/apex/pageName?&id=00141000004jkU0AAI"}).fire();
 
-
+**********************************
 
 //створити лист з лінками і робити дії в залежності яку лінку натисне юзер
 https://developer.salesforce.com/forums/?id=906F00000009496IAA
+
+**********************************
+
+//Tips for create formula fields
+https://help.salesforce.com/articleView?id=tips_on_building_formulas.htm&type=5
+//відео по формулах філдах
+https://www.youtube.com/watch?time_continue=17&v=YcN2OK2iKVM
+//опис кожної формули
+https://resources.docs.salesforce.com/214/latest/en-us/sfdc/pdf/salesforce_formulas_cheatsheet.pdf
+//приклади
+https://help.salesforce.com/articleView?id=useful_advanced_formulas.htm&type=5
