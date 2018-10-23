@@ -1,0 +1,1 @@
+Map<Id, Account> mapHer = new Map<Id, Account>([SELECT Id FROM Account]);
