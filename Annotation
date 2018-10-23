@@ -1,2 +1,5 @@
 @InvocableMethod
 //метод який можна викликати з Process Builder
+
+@AuraEnabled
+//можна викликати з фронта
