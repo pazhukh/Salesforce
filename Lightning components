@@ -34,6 +34,9 @@ https://salesforce.stackexchange.com/questions/149779/lightning-client-side-sort
 
 		var btnLabel = btnClicked.get("v.label");
 		var btnAuraId = btnClicked.getLocalId();
+		
+		//set new value of button attributes
+		btnClicked.set('v.label','New Label');
 
 		var name = component.find("name").get("v.value"); //aura:id="name"
 	}
