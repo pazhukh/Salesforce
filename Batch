@@ -1,0 +1,17 @@
+//щоб запустити батч
+Id batchId = Database.executeBatch(new TransactionGatherer_Batch(), 10);
+
+global class TransactionGatherer_Batch implements Database.Batchable<sObject>, Database.Stateful {
+
+  global Database.QueryLocator start(Database.BatchableContext BC) {
+        return Database.getQueryLocator(
+            [SELECT Id FROM Plan_Usage__c]
+        );
+  }
+   
+   global void execute(Database.BatchableContext BC, List<sObject> scope) {
+   }
+   global void finish(Database.BatchableContext BC) {
+        //System.debug(JSON.serialize(createdTransactions)); 
+   }
+}
