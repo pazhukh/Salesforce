@@ -50,3 +50,14 @@ const rerenderEvent = $A.get('e.c:rerenderEvent');
 rerenderEvent.fire();
 component.getEvent('createNewTourn').fire();
 
+****************************************************************
+toast (messaging)
+****************************************************************
+https://developer.salesforce.com/docs/component-library/bundle/force:showToast/documentation
+https://developer.salesforce.com/blogs/developer-relations/2017/08/displaying-user-notifications-lightning-component-framework.html
+
+toastEvent.setParams({
+    title: "Success!",
+    message: "Congrats, it works!",
+    type: "success"
+});
