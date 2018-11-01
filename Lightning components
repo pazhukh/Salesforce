@@ -55,6 +55,7 @@ toast (messaging)
 ****************************************************************
 https://developer.salesforce.com/docs/component-library/bundle/force:showToast/documentation
 https://developer.salesforce.com/blogs/developer-relations/2017/08/displaying-user-notifications-lightning-component-framework.html
+https://www.lightningdesignsystem.com/guidelines/messaging/components/toasts/#flavor-usage
 
 toastEvent.setParams({
     title: "Success!",
