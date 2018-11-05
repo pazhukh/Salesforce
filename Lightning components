@@ -7,7 +7,6 @@ Lightning App Builder implements="flexipage:availableForAllPageTypes"
 Tabs implements="force:appHostable"
 Quick action implements="force:lightningQuickAction"
 
-
 deleting records 
 https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/apex_records_delete.htm
 
@@ -27,44 +26,10 @@ https://lightningdesignsystem.com
 //Sort records in userSide
 https://salesforce.stackexchange.com/questions/149779/lightning-client-side-sorting
 
-//controller
-({
-	click : function(component, event, helper) {
-		var btnClicked = event.getSource();
-
-		var btnLabel = btnClicked.get("v.label");
-		var btnAuraId = btnClicked.getLocalId();
-		
-		//set new value of button attributes
-		btnClicked.set('v.label','New Label');
-
-		var name = component.find("name").get("v.value"); //aura:id="name"
-	}
-})
-
-<lightning:spinner aura:id="spinner" variant="brand" size="large" class="slds-hide"/>
-$A.util.addClass(component.find('spinner'), 'slds-hide');
-
-//events
-const rerenderEvent = $A.get('e.c:rerenderEvent');
-rerenderEvent.fire();
-component.getEvent('createNewTourn').fire();
 
 
 ****************************************************************
-//toast (messaging)
-https://developer.salesforce.com/docs/component-library/bundle/force:showToast/documentation
-https://developer.salesforce.com/blogs/developer-relations/2017/08/displaying-user-notifications-lightning-component-framework.html
-https://www.lightningdesignsystem.com/guidelines/messaging/components/toasts/#flavor-usage
-
-toastEvent.setParams({
-    title: "Success!",
-    message: "Congrats, it works!",
-    type: "success"
-});
-****************************************************************
-
-
+Component
 ****************************************************************
 //компонента в якій можна змінювати дані рекорда на якому ми є
 https://trailhead.salesforce.com/content/learn/modules/lightning_data_service/lightning_data_service_manipulate_records
@@ -75,4 +40,49 @@ https://trailhead.salesforce.com/content/learn/modules/lightning_data_service/li
                       targetRecord="{!v.record}"
                       targetFields ="{!v.simpleRecord}"
                       mode="EDIT"/>
+
+//spiner
+<lightning:spinner aura:id="spinner" variant="brand" size="large" class="slds-hide"/>
+$A.util.addClass(component.find('spinner'), 'slds-hide');
+
+
+
 ****************************************************************
+Controller
+****************************************************************
+
+//get value of clicked element
+click : function(component, event, helper) {
+	var btnClicked = event.getSource();
+
+	var btnLabel = btnClicked.get("v.label");
+	var btnAuraId = btnClicked.getLocalId();
+
+	//set new value of button attributes
+	btnClicked.set('v.label','New Label');
+
+	var name = component.find("name").get("v.value"); //aura:id="name"
+}
+
+//fields validations
+const valid = component.find('tournamentField').reduce((validFields, current) => {
+	current.showHelpMessageIfInvalid();
+	return validFields && current.get('v.validity').valid;
+}, true);
+
+
+//events
+const rerenderEvent = $A.get('e.c:rerenderEvent');
+rerenderEvent.fire();
+component.getEvent('createNewTourn').fire();
+
+
+//toast (messaging)
+https://developer.salesforce.com/docs/component-library/bundle/force:showToast/documentation
+https://developer.salesforce.com/blogs/developer-relations/2017/08/displaying-user-notifications-lightning-component-framework.html
+https://www.lightningdesignsystem.com/guidelines/messaging/components/toasts/#flavor-usage
+toastEvent.setParams({
+    title: "Success!",
+    message: "Congrats, it works!",
+    type: "success"
+});
