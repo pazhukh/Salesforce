@@ -1,0 +1,41 @@
+//method
+@AuraEnabled
+public static Map<String, String> getPicklistFieldValues(){
+    Map<String, String> options = new Map<String, String>();
+
+    Schema.DescribeFieldResult picklistField = pazhukh_1__Tournament__c.pazhukh_1__Type__c.getDescribe();
+    List<Schema.PicklistEntry> values = picklistField.getPicklistValues();
+
+    for(Schema.PicklistEntry value : values){
+        options.put(value.getValue(), value.getLabel());
+    }
+
+    return options;
+}
+
+//JS controller or helper
+getTypeFieldValues : function(component, event, helper) {
+		const picklistValuesAction = component.get('c.getPicklistFieldValues');
+        picklistValuesAction.setCallback(this, (response) => {
+            if(response.getState() === 'SUCCESS'){
+                const result = response.getReturnValue();
+                const picklistFieldValues = [];
+                for(let key in result){
+                    picklistFieldValues.push({key:key, value:result[key]});
+                }
+                component.set('v.tournametTypes', picklistFieldValues);
+			      }
+        })
+        
+        $A.enqueueAction(picklistValuesAction);
+	}
+  
+//component
+<aura:attribute name="tournametTypes" type="List"/>
+
+<lightning:select aura:id="tournamentField" label="Type" value="{!v.simpleNewTournament.pazhukh_1__Type__c}">
+    <option value="">Choose type...</option>
+    <aura:iteration items="{!v.tournametTypes}" var="item">
+        <option value="{!item.key}">{!item.value}</option>
+    </aura:iteration>
+</lightning:select>
