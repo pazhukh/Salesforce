@@ -50,9 +50,9 @@ const rerenderEvent = $A.get('e.c:rerenderEvent');
 rerenderEvent.fire();
 component.getEvent('createNewTourn').fire();
 
+
 ****************************************************************
-toast (messaging)
-****************************************************************
+//toast (messaging)
 https://developer.salesforce.com/docs/component-library/bundle/force:showToast/documentation
 https://developer.salesforce.com/blogs/developer-relations/2017/08/displaying-user-notifications-lightning-component-framework.html
 https://www.lightningdesignsystem.com/guidelines/messaging/components/toasts/#flavor-usage
@@ -62,3 +62,17 @@ toastEvent.setParams({
     message: "Congrats, it works!",
     type: "success"
 });
+****************************************************************
+
+
+****************************************************************
+//компонента в якій можна змінювати дані рекорда на якому ми є
+https://trailhead.salesforce.com/content/learn/modules/lightning_data_service/lightning_data_service_manipulate_records
+<force:recordData aura:id="recordEditor"
+                      layoutType="FULL"
+                      recordId="{!v.recordId}"
+                      targetError="{!v.recordError}"
+                      targetRecord="{!v.record}"
+                      targetFields ="{!v.simpleRecord}"
+                      mode="EDIT"/>
+****************************************************************
