@@ -26,7 +26,8 @@ https://lightningdesignsystem.com
 //Sort records in userSide
 https://salesforce.stackexchange.com/questions/149779/lightning-client-side-sorting
 
-
+//delete, create, update record without APEX
+https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/data_service.htm
 
 ****************************************************************
 Component
