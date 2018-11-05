@@ -19,5 +19,11 @@ Test.stopTest();
             }
         }
 
+
+**********************
 for(String keyInMap : myMap.keySet()) {}
 for(sObject object : myMap.values()){}
+
+**********************
+Get values of picklist
+https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_fields_describe.htm
