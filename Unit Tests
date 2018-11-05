@@ -58,3 +58,11 @@ private class UpdateContactAddressesTest {
     }
     
 }
+
+*****************
+Get parameters from url VFP
+
+PageReference pageRef = Page.CloneDraftPitches; //CloneDraftPitches - VF page
+Test.setCurrentPage(pageRef);
+// put the lead id as a parameter
+ApexPages.currentPage().getParameters().put('id',l.id);
