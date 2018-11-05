@@ -81,8 +81,16 @@ component.getEvent('createNewTourn').fire();
 https://developer.salesforce.com/docs/component-library/bundle/force:showToast/documentation
 https://developer.salesforce.com/blogs/developer-relations/2017/08/displaying-user-notifications-lightning-component-framework.html
 https://www.lightningdesignsystem.com/guidelines/messaging/components/toasts/#flavor-usage
+
+var toastEvent = $A.get("e.force:showToast");
 toastEvent.setParams({
-    title: "Success!",
-    message: "Congrats, it works!",
-    type: "success"
+	mode: 'sticky',
+	message: 'This is a required message',
+	messageTemplate: 'Record {0} created! See it {1}!',
+	messageTemplateData: ['Salesforce', {
+	    url: 'http://www.salesforce.com/',
+	    label: 'here',
+	    }
+	]
 });
+toastEvent.fire();
