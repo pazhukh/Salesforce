@@ -72,10 +72,20 @@ const valid = component.find('tournamentField').reduce((validFields, current) =>
 }, true);
 
 
-//events
+-*-*-*-*-*-*-*-* events *-*-*-*-*-*-*-*
 const rerenderEvent = $A.get('e.c:rerenderEvent');
 rerenderEvent.fire();
 component.getEvent('createNewTourn').fire();
+
+//navigate to record page by it Id
+var navEvt = $A.get("e.force:navigateToSObject");
+    navEvt.setParams({
+      "recordId": "00QB0000000ybNX",
+      "slideDevName": "related"
+    });
+    navEvt.fire();
+}
+
 
 
 //toast (messaging)
