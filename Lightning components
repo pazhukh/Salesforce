@@ -91,6 +91,8 @@ click : function(component, event, helper) {
 	var name = component.find("name").get("v.value"); //aura:id="name"
 }
 
+//get element by aura:id - подібне до document.getElementById
+component.find('ratingarea').getElement();
 
 
 //get data-value of clicked element
