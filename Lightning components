@@ -78,8 +78,12 @@ click : function(component, event, helper) {
 myFunction : function (component, event, helper) {
     var component_target = event.currentTarget;
     var attribute = component_target.dataset.myvalue;
-    console.info(attribute);
+    
+    aбо
+    var userId = event.currentTarget.getAttribute("data-userid");
 }
+
+
 
 
 //fields validations
