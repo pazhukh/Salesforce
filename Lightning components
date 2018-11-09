@@ -66,6 +66,16 @@ click : function(component, event, helper) {
 	var name = component.find("name").get("v.value"); //aura:id="name"
 }
 
+//get data-value of clicked element
+<div onclick="{!c.myFunction}" data-myvalue="this is it">click me</div>
+
+myFunction : function (component, event, helper) {
+    var component_target = event.currentTarget;
+    var attribute = component_target.dataset.myvalue;
+    console.info(attribute);
+}
+
+
 //fields validations
 const valid = component.find('tournamentField').reduce((validFields, current) => {
 	current.showHelpMessageIfInvalid();
