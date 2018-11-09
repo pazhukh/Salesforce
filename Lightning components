@@ -46,7 +46,8 @@ https://trailhead.salesforce.com/content/learn/modules/lightning_data_service/li
 <lightning:spinner aura:id="spinner" variant="brand" size="large" class="slds-hide"/>
 $A.util.addClass(component.find('spinner'), 'slds-hide');
 
-
+// тег а без href
+href="javascript:void(0);"
 
 ****************************************************************
 Controller
