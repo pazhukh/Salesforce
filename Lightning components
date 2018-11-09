@@ -29,6 +29,9 @@ https://salesforce.stackexchange.com/questions/149779/lightning-client-side-sort
 //delete, create, update record without APEX
 https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/data_service.htm
 
+
+
+
 ****************************************************************
 Component
 ****************************************************************
@@ -36,6 +39,17 @@ Component
 //handler на зміну значення атрибута boat
 <aura:handler name="change" value="{!v.boat}" action="{!c.itemsChange}"/>
 <aura:attibute name="boat" type="string"/>
+
+
+
+
+//завантаження скрипна і стилів зі статік ресурсі в компоненту
+<ltng:require styles="/resource/fivestar/rating.css" 
+                  scripts='/resource/fivestar/rating.js' 
+                  afterScriptsLoaded="{!c.controllerFunction}"/>
+https://developer.salesforce.com/blogs/developer-relations/2015/05/loading-external-js-css-libraries-lightning-components.html		  
+
+
 
 
 //компонента в якій можна змінювати дані рекорда на якому ми є
@@ -52,8 +66,13 @@ https://trailhead.salesforce.com/content/learn/modules/lightning_data_service/li
 <lightning:spinner aura:id="spinner" variant="brand" size="large" class="slds-hide"/>
 $A.util.addClass(component.find('spinner'), 'slds-hide');
 
+
+
 // тег а без href
 href="javascript:void(0);"
+
+
+
 
 ****************************************************************
 Controller
@@ -71,6 +90,8 @@ click : function(component, event, helper) {
 
 	var name = component.find("name").get("v.value"); //aura:id="name"
 }
+
+
 
 //get data-value of clicked element
 <div onclick="{!c.myFunction}" data-myvalue="this is it">click me</div>
