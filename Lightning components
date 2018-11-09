@@ -32,6 +32,12 @@ https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/data_
 ****************************************************************
 Component
 ****************************************************************
+
+//handler на зміну значення атрибута boat
+<aura:handler name="change" value="{!v.boat}" action="{!c.itemsChange}"/>
+<aura:attibute name="boat" type="string"/>
+
+
 //компонента в якій можна змінювати дані рекорда на якому ми є
 https://trailhead.salesforce.com/content/learn/modules/lightning_data_service/lightning_data_service_manipulate_records
 <force:recordData aura:id="recordEditor"
