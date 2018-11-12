@@ -1,5 +1,8 @@
 https://json2apex.herokuapp.com/
 
+//JSON class methods
+https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_System_Json.htm#apex_System_Json_deserializeUntyped
+
 //REST запит
 Http http = new Http();
 HttpRequest request = new HttpRequest();
