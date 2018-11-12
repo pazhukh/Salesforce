@@ -1,3 +1,5 @@
+https://json2apex.herokuapp.com/
+
 //REST запит
 Http http = new Http();
 HttpRequest request = new HttpRequest();
