@@ -1,5 +1,11 @@
 https://json2apex.herokuapp.com/
 
+//тести для rest
+https://trailhead.salesforce.com/content/learn/modules/apex_integration_services/apex_integration_rest_callouts
+
+
+
+
 //JSON class methods
 https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_System_Json.htm#apex_System_Json_deserializeUntyped
 
