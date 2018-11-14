@@ -31,3 +31,13 @@ https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_me
 **********************
 //get org url
 String url = URL.getSalesforceBaseUrl().toExternalForm();
+
+**********************
+//Page reference
+//взяти параметир з url
+String redirect = ApexPages.currentPage().getParameters().get('redirect');
+
+//запхати параметир в url
+PageReference pageRef = new PageReference('/apex/EditQuotePage?newId='+thisQuote.Id);
+pageRef.setRedirect(true);
+pageRef.getParameters().put('redirect', 'true');
