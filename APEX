@@ -1,4 +1,5 @@
 Все про apex
+https://developer.salesforce.com/page/Apex_Intro
 https://www.tutorialspoint.com/apex/apex_data_types.htm
 Sertifications
 https://quizlet.com/116767571/salesforce-app-builder-certification-flash-cards/
