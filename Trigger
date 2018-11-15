@@ -1,8 +1,11 @@
 https://trailhead.salesforce.com/modules/apex_triggers/units/apex_triggers_intro
+addError - не дозволяє зберегти рекорд і викидає помилку; a.addError = 'You cant save account';
+
 
 Trigger HelloWorldTrigger on Account (before insert) {
     for(Account a : Trigger.New) {
         a.Description = 'New description';
+        a.addError = 'You cant save account';
     }   
 }
 
