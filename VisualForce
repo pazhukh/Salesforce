@@ -1,5 +1,8 @@
 https://developer.salesforce.com/docs/atlas.en-us.pages.meta/pages/pages_intro.htm
 
+//стандартні компоненти VFP
+https://developer.salesforce.com/docs/atlas.en-us.pages.meta/pages/pages_compref.htm
+
 <apex:pageMessages ></apex:pageMessages>
 
 
