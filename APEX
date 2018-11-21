@@ -12,6 +12,11 @@ Test.stopTest();
 
 
 
+//витягнути філди з філдсету обєкту
+private static final List<Schema.FieldSetMember> ACCOUNT_FIELD_SET_FIELDS = ObjectType.Account.FieldSets.Time_Invoice_Item.getFields();
+
+
+
 //apex show massage in Visual Force
 https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_pages_message.htm
 ApexPages.addMessage();
