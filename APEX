@@ -10,6 +10,16 @@ Map<String, List<Schedule__c>> scheduleRecordsMap = new Map<String, List<Schedul
 Test.startTest();
 Test.stopTest();
 
+
+
+//apex show massage in Visual Force
+https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_pages_message.htm
+ApexPages.addMessage();
+ApexPages.addMessage(new ApexPages.Message(ApexPages.Severity.WARNING,'Some Text'));
+<apex:pageMessages />
+
+
+
 //fill map by keys(quoteLineItem Payment Type) and values (Schedule__c records)
         Map<String, List<Schedule__c>> scheduleRecordsMap = new Map<String, List<Schedule__c>>();
         for(Schedule__c scheduleRelatedRecord : scheduleRelatedRecords) {
