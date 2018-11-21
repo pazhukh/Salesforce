@@ -23,6 +23,8 @@ ApexPages.addMessage();
 ApexPages.addMessage(new ApexPages.Message(ApexPages.Severity.WARNING,'Some Text'));
 <apex:pageMessages />
 
+//селект стрінгою
+Database.query('SELECT Name FROW Account');
 
 
 //fill map by keys(quoteLineItem Payment Type) and values (Schedule__c records)
