@@ -9,6 +9,8 @@ https://developer.salesforce.com/docs/atlas.en-us.pages.meta/pages/pages_compref
 <apex:stylesheet value="{!URLFOR($Resource.jQueryMobile,'jquery.mobile-1.4.5/jquery.mobile-1.4.5.css')}"/> - zip
 <apex:includeScript value="{! $Resource.jQuery }"/> - звичайний файл
 
+//get Contact field label
+$ObjectType.Contact.Fields.LastName.Label
 
 
 *****************
