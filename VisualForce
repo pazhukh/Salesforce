@@ -10,8 +10,8 @@ https://developer.salesforce.com/docs/atlas.en-us.pages.meta/pages/pages_compref
 <apex:includeScript value="{! $Resource.jQuery }"/> - звичайний файл
 
 //get Contact field label
-$ObjectType.Contact.Fields.LastName.Label
-
+{!$ObjectType.Contact.Fields.LastName.Label}
+{!$ObjectType.Custom_Object__c.fields.Field__c.label}
 
 *****************
 *****Таблиця*****
