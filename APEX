@@ -59,3 +59,21 @@ String redirect = ApexPages.currentPage().getParameters().get('redirect');
 PageReference pageRef = new PageReference('/apex/EditQuotePage?newId='+thisQuote.Id);
 pageRef.setRedirect(true);
 pageRef.getParameters().put('redirect', 'true');
+
+
+**********************
+Visualforce page
+**********************
+//коли пишем екстеншин до standart controller
+<apex:page standardController="case" extensions="cls_CaseMilestones">
+public cls_CaseMilestones(ApexPages.StandardController stdController){}
+
+//test до екстеншина
+/-сетаємо нашу сторінку в pagereference
+PageReference pageRef = Page.CaseMilestones;
+Test.setCurrentPage(pageRef);
+ApexPages.currentPage().getParameters().put('id', testCase.id);
+
+/-викликаємо на конструктор
+ApexPages.StandardController sc = new ApexPages.StandardController(testCase);                                
+cls_CaseMilestones controller = new cls_CaseMilestones(sc);
