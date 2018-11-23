@@ -4,6 +4,7 @@ https://developer.salesforce.com/docs/atlas.en-us.pages.meta/pages/pages_intro.h
 https://developer.salesforce.com/docs/atlas.en-us.pages.meta/pages/pages_compref.htm
 
 <apex:pageMessages />
+<apex:slds />
 
 //static resources
 <apex:stylesheet value="{!URLFOR($Resource.jQueryMobile,'jquery.mobile-1.4.5/jquery.mobile-1.4.5.css')}"/> - zip
