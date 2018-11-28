@@ -33,6 +33,20 @@ global class DailyLeadProcessor implements Schedulable{
     }
 }
 
+/*/*/*/*/
+public class WarehouseSyncSchedule implements Schedulable{
+    public void execute(SchedulableContext ctx){
+    	//метод який має виконтуватися в скедюеблі
+        WarehouseCalloutService.runWarehouseEquipmentSync();
+    }
+}
+
+//запускаємо скедюебл через девконсоль або Apex Classes-Schedule Apex
+WarehouseSyncSchedule newSchdule = new WarehouseSyncSchedule();
+String launchTime = '00 00 01 * * ?';
+System.schedule('some name', launchTime, newSchdule);
+/*/*/*/*/
+
 *****///****Batchable******///****
 **********************************
 
