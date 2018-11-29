@@ -14,6 +14,14 @@ https://developer.salesforce.com/docs/atlas.en-us.pages.meta/pages/pages_compref
 {!$ObjectType.Contact.Fields.LastName.Label}
 {!$ObjectType.Custom_Object__c.fields.Field__c.label}
 
+
+//SVG іконки
+<svg class="slds-icon slds-icon-text-default slds-icon_x-small" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" fill="red" xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#spinner" />
+</svg> 
+https://www.lightningdesignsystem.com/icons/
+
+
 *****************
 *****Таблиця*****
 *****************
