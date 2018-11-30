@@ -21,6 +21,10 @@ https://developer.salesforce.com/docs/atlas.en-us.pages.meta/pages/pages_compref
 </svg> 
 https://www.lightningdesignsystem.com/icons/
 
+//показати тексти коли ajax почався і закінчився (виконується бекенд)
+<apex:commandButton action="{!save}" value="Save" reRender="main-block" status="save-status"/>          
+<apex:actionStatus startText=" (saving...)" stopText=" (done)" id="save-status"/>
+
 
 *****************
 *****Таблиця*****
