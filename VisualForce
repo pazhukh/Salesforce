@@ -25,6 +25,17 @@ https://www.lightningdesignsystem.com/icons/
 <apex:commandButton action="{!save}" value="Save" reRender="main-block" status="save-status"/>          
 <apex:actionStatus startText=" (saving...)" stopText=" (done)" id="save-status"/>
 
+//показати cпінер коли натиснув на кнопку
+<apex:commandButton action="{!changeStageName}" value="Save" reRender="main-form" status="toggle-spinner"/>           
+<apex:actionStatus onstart="toggleSpinner();" onstop="toggleSpinner();" id="toggle-spinner"/>
+<script>
+    function toggleSpinner(){
+        document.getElementById('svg-spinner').classList.toggle('active');
+    }
+</script>
+
+
+
 
 *****************
 *****Таблиця*****
