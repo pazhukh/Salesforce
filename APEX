@@ -21,6 +21,7 @@ private static final List<Schema.FieldSetMember> ACCOUNT_FIELD_SET_FIELDS = Obje
 https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_pages_message.htm
 ApexPages.addMessage();
 ApexPages.addMessage(new ApexPages.Message(ApexPages.Severity.WARNING,'Some Text'));
+ApexPages.addMessage(new ApexPages.Message(ApexPages.Severity.ERROR, e.getMessage()));
 <apex:pageMessages />
 
 //селект стрінгою
