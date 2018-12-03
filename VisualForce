@@ -69,3 +69,17 @@ https://www.lightningdesignsystem.com/icons/
         
     </apex:pageBlock>
 </apex:page>
+
+********************
+*****JavaScript*****
+********************
+//перевіряти чи visualforce page раниться в lightning
+function isLightningExperienceOrSalesforce1() {
+    return((typeof sforce != 'undefined') && sforce && (!!sforce.one));
+}
+if( isLightningExperienceOrSalesforce1() ) {
+    alert('lightning');
+}
+else {
+    alert('visualforce');
+}
