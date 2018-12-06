@@ -4,13 +4,7 @@ https://www.tutorialspoint.com/apex/apex_data_types.htm
 Sertifications
 https://quizlet.com/116767571/salesforce-app-builder-certification-flash-cards/
 
-
 Map<String, List<Schedule__c>> scheduleRecordsMap = new Map<String, List<Schedule__c>>();
-
-Test.startTest();
-Test.stopTest();
-
-
 
 //витягнути філди з філдсету обєкту
 private static final List<Schema.FieldSetMember> ACCOUNT_FIELD_SET_FIELDS = ObjectType.Account.FieldSets.Time_Invoice_Item.getFields();
@@ -78,3 +72,16 @@ ApexPages.currentPage().getParameters().put('id', testCase.id);
 /-викликаємо на конструктор
 ApexPages.StandardController sc = new ApexPages.StandardController(testCase);                                
 cls_CaseMilestones controller = new cls_CaseMilestones(sc);
+
+
+************************
+//взнати які юзери в Queue
+Lead lead = [SELECT OwnerId, Owner.Type FROM Lead WHERE Company = 'TechMagic'];
+if(lead.Owner.Type == 'Queue'){
+    List<GroupMember> gm = [SELECT UserOrGroupId  FROM GroupMember WHERE GroupId = :lead.OwnerId];
+    for(GroupMember g : gm){
+        System.debug(g.Id.getSObjectType() + '-' + g.UserOrGroupId.getSObjectType());
+    }
+    List<User> u = [SELECT Name FROM User WHERE Id = :gm[0].UserOrGroupId];
+    System.debug(u);
+}
