@@ -29,3 +29,8 @@ String queryAllAppliedPaticipants = 'SELECT '
 		
 List<SObject> allAppliedPlayersToRRTournament =  Database.query(queryAllAppliedPaticipants);
 
+//беремо юзерів з group (queue)
+[select name, email, isactive, profile.name, usertype
+from user 
+where id in 
+    (select userorgroupid from groupmember where group.name = 'Rainbow Sales')]
