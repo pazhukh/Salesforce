@@ -5,7 +5,8 @@ addError - не дозволяє зберегти рекорд і викидає
 Trigger HelloWorldTrigger on Account (before insert) {
     for(Account a : Trigger.New) {
         a.Description = 'New description';
-        a.addError = 'You cant save account';
+        a.addError('You cant save account');
+        a.fieldName.addError('Error below field');
     }   
 }
 
