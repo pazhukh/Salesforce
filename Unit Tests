@@ -71,3 +71,11 @@ PageReference pageRef = Page.CloneDraftPitches; //CloneDraftPitches - VF page
 Test.setCurrentPage(pageRef);
 // put the lead id as a parameter
 ApexPages.currentPage().getParameters().put('id',l.id);
+
+
+****************
+//insert queue
+ Group g1 = new Group(Name='group name', type='Queue');
+insert g1;
+QueuesObject q1 = new QueueSObject(QueueID = g1.id, SobjectType = 'Lead');
+insert q1;
