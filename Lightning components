@@ -80,6 +80,8 @@ Controller
 
 //get value of clicked element
 click : function(component, event, helper) {
+	var clickedElement = event.target.innerText;
+
 	var btnClicked = event.getSource();
 
 	var btnLabel = btnClicked.get("v.label");
@@ -87,7 +89,7 @@ click : function(component, event, helper) {
 
 	//set new value of button attributes
 	btnClicked.set('v.label','New Label');
-
+	
 	var name = component.find("name").get("v.value"); //aura:id="name"
 }
 
