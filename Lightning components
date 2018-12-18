@@ -91,6 +91,7 @@ click : function(component, event, helper) {
 	btnClicked.set('v.label','New Label');
 	
 	var name = component.find("name").get("v.value"); //aura:id="name"
+	component.find("element").set("v.value", "");
 }
 
 //get element by aura:id - подібне до document.getElementById
