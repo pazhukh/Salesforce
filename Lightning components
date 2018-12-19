@@ -152,3 +152,19 @@ toastEvent.setParams({
 	]
 });
 toastEvent.fire();
+
+****Exeptions****
+*****************
+try{
+} catch (DmlException e) {
+    throw new AuraHandledException(e.getDmlMessage(0));
+}
+try{
+} catch (Exception e) {
+    throw new AuraHandledException(e.getMessage());
+}
+if (state === "ERROR"){
+	response.getError().forEach((error)=>{
+	    this.showToast('Error!', error.message, 'error');
+	})
+}
