@@ -168,3 +168,8 @@ if (state === "ERROR"){
 	    this.showToast('Error!', error.message, 'error');
 	})
 }
+
+//aura handled exception
+catch(AuraHandledException e){
+    updated = false;
+}
