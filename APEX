@@ -1,3 +1,6 @@
+//сканер на проблеми
+https://security.secure.force.com/security/tools/forcecom/scanner#
+
 Все про apex
 https://developer.salesforce.com/page/Apex_Intro
 https://www.tutorialspoint.com/apex/apex_data_types.htm
