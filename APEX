@@ -102,3 +102,10 @@ for(String field : cf.keySet()) {
     fieldsTypes.add(fieldTypeMap);
 }
 System.debug(JSON.serialize(fieldsTypes));
+
+//get fields and fields type from field set API named Heroku_App_Fields sObject Case
+Schema.FieldSet fs2 = Schema.SObjectType.Case.fieldSets.Heroku_App_Fields;
+List<Schema.FieldSetMember> allFields = fs2.getFields();
+for(Schema.FieldSetMember f : allFields){
+    System.debug('Name=> ' + f.getFieldPath() + ' **** Type=> ' + f.getType());
+}
