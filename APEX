@@ -104,8 +104,15 @@ for(String field : cf.keySet()) {
 System.debug(JSON.serialize(fieldsTypes));
 
 //get fields and fields type from field set API named Heroku_App_Fields sObject Case
-Schema.FieldSet fs2 = Schema.SObjectType.Case.fieldSets.Heroku_App_Fields;
-List<Schema.FieldSetMember> allFields = fs2.getFields();
+List<Schema.FieldSetMember> allFields = Schema.SObjectType.Case.fieldSets.Heroku_App_Fields.getFields();
+List<Map<String, String>> fieldsTypes = new List<Map<String, String>>();
 for(Schema.FieldSetMember f : allFields){
-    System.debug('Name=> ' + f.getFieldPath() + ' **** Type=> ' + f.getType());
+    String field = String.valueOf(f.getFieldPath()).toLowerCase();
+    String fieldType = String.valueOf(f.getType()).toLowerCase();
+    Map<String, String> fieldTypeMap = new Map<String, String>{field => fieldType};
+    fieldsTypes.add(fieldTypeMap);
+    
+    System.debug('Name=> ' + field + ' **** Type=> ' + fieldType);
 }
+System.debug(JSON.serialize(fieldsTypes));
+
