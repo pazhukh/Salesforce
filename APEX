@@ -88,3 +88,17 @@ if(lead.Owner.Type == 'Queue'){
     List<User> u = [SELECT Name FROM User WHERE Id = :gm[0].UserOrGroupId];
     System.debug(u);
 }
+
+
+*************************
+//get fields type
+Map<String, Schema.SObjectField> cf = Schema.SObjectType.Account.fields.getMap();
+List<Map<String, String>> fieldsTypes = new List<Map<String, String>>();
+for(String field : cf.keySet()) {
+    Schema.SObjectField f = cf.get(field);
+    Schema.DisplayType fieldType = f.getDescribe().getType();
+    System.debug(f + ' => ' + field + ' => ' + fieldType);
+    Map<String, String> fieldTypeMap = new Map<String, String>{String.valueOf(field) => String.valueOf(fieldType)};
+    fieldsTypes.add(fieldTypeMap);
+}
+System.debug(JSON.serialize(fieldsTypes));
