@@ -1,5 +1,11 @@
-@InvocableMethod
+@InvocableMethod(label='Post To PMS' description='Post Opportunity to PMS servise')
 //метод який можна викликати з Process Builder
 
 @AuraEnabled
 //можна викликати з фронта
+
+@RestResource(urlMapping='/project/*')
+//для колаутів з стороннього сервіса до SF
+@HttpPost
+@HttpGet
+//сторонній сервіс буде юзати GET-@HttpGet, POST-@HttpPost
