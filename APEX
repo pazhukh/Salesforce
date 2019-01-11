@@ -116,3 +116,6 @@ for(Schema.FieldSetMember f : allFields){
 }
 System.debug(JSON.serialize(fieldsTypes));
 
+*************************
+//Custom settings
+String token = ServiceTokens__c.getValues('ProjectServiceToken').Token__c;
