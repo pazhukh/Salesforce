@@ -79,3 +79,10 @@ ApexPages.currentPage().getParameters().put('id',l.id);
 insert g1;
 QueuesObject q1 = new QueueSObject(QueueID = g1.id, SobjectType = 'Lead');
 insert q1;
+
+****************
+//create the Custom Settings
+ServiceTokens__c servToken = new ServiceTokens__c();
+servToken.Name = 'ProjectServiceToken';
+servToken.Token__c = 'shgglskgblsbglbdsflgbldmfbgldb';
+insert servToken;
