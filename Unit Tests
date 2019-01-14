@@ -10,6 +10,10 @@ System.assertEquals();
  Test.stopTest();
 
 
+Database.SaveResult result = Database.insert(records or record, false);
+System.assert(result.isSuccess());
+
+
 @isTest
 private class TemperatureConverterTest {
     @isTest static void testWarmTemp() {
