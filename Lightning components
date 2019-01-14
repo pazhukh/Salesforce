@@ -3,9 +3,13 @@ https://developer.salesforce.com/docs/component-library/bundle/lightning:tab/exa
 
 //щоб компоненту можна було додати до App Builder, Tabs і так далі...
 https://developer.salesforce.com/docs/atlas.en-us.214.0.lightning.meta/lightning/components_config_for_app_builder.htm
-Lightning App Builder implements="flexipage:availableForAllPageTypes"
-Tabs implements="force:appHostable"
-Quick action implements="force:lightningQuickAction"
+
+//implements to componen
+implements="force:appHostable" - Tabs
+implements="force:lightningQuickAction" - Quick action 
+implements="lightning:actionOverride" - override the standard action
+implements="flexipage:availableForRecordHome" - make the component available for record pages.
+implements="flexipage:availableForAllPageTypes" - Lightning App Builder 
 
 deleting records 
 https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/apex_records_delete.htm
