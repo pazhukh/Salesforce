@@ -137,6 +137,13 @@ var navEvt = $A.get("e.force:navigateToSObject");
     navEvt.fire();
 }
 
+//navigate to object home page
+var homeEvent = $A.get("e.force:navigateToObjectHome");
+homeEvent.setParams({
+	"scope": "Speaker__c"
+});
+homeEvent.fire();
+
 
 
 //toast (messaging)
