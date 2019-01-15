@@ -134,3 +134,22 @@ System.debug(JSON.serialize(fieldsTypes));
 *************************
 //Custom settings
 String token = ServiceTokens__c.getValues('ProjectServiceToken').Token__c;
+
+
+*************************
+//time difference
+Case c = [SELECT CreatedDate, LastModifiedDate  FROM Case LIMIT 1];
+//System.debug(DateTime.newInstance(c.CreatedDate));
+//System.debug(datetime.now() - c.CreatedDate);
+Long now = datetime.now().getTime();
+Long created = c.CreatedDate.getTime();
+Long modified = c.LastModifiedDate.getTime();
+
+Long milliseconds = now - modified;
+Long seconds = milliseconds / 1000;
+Long minutes = seconds / 60;
+Long hours = minutes / 60;
+Long days = hours / 24;
+
+System.debug(days);
+
