@@ -164,6 +164,11 @@ toastEvent.setParams({
 });
 toastEvent.fire();
 
+
+//refresh page
+$A.get('e.force:refreshView').fire();
+
+
 ****Exeptions****
 *****************
 try{
