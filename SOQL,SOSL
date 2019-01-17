@@ -34,3 +34,20 @@ List<SObject> allAppliedPlayersToRRTournament =  Database.query(queryAllAppliedP
 FROM user 
 WHERE id IN 
     (SELECT userorgroupid FROM groupmember WHERE group.name = 'Rainbow Sales')]
+    
+    
+/*/*/*/*/*/*/*/*/*/*/
+Агреговані квері
+List<AggregateResult> aggregateOrderItems = [
+                SELECT
+                    Product2Id, SUM(Quantity) activatedQuantity
+                FROM 
+                    OrderItem
+                WHERE 
+                    OrderId IN :activatedOrderIds
+                GROUP BY
+                    Product2Id
+        ];
+Вертає (AggregateResult:{Product2Id=01t1t000000b4r0AAA, activatedQuantity=1.0}, 
+	AggregateResult:{Product2Id=01t1t000000b4r2AAA, activatedQuantity=2.0})
+Id продукту - загальну кількість чогось
