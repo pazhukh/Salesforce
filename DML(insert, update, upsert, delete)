@@ -15,6 +15,7 @@ update sObjectList;
 upsert sObjectList Account.Fields.MyExternalId;
 delete sObjectList;
 
+List<DataBase.saveResult> results = Database.insert(prToInsert, false);
 Database.insert(sObjectList, false) - запише всі, що без помилок, а помилкові рекорди пропустить
 Database.update(sObjectList, true) - allOrNone (видасть помилку, якщо хоча б один поганий рекорд)
 Database.upsert()
