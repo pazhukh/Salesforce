@@ -90,3 +90,9 @@ ServiceTokens__c servToken = new ServiceTokens__c();
 servToken.Name = 'ProjectServiceToken';
 servToken.Token__c = 'shgglskgblsbglbdsflgbldmfbgldb';
 insert servToken;
+
+*****************
+//test when standart controller and extensions
+Product2 pr = new Product2();
+ApexPages.StandardController sc = new ApexPages.StandardController(pr);
+Product2Extension ext = new Product2Extension(sc);
