@@ -7,7 +7,12 @@ https://www.tutorialspoint.com/apex/apex_data_types.htm
 Sertifications
 https://quizlet.com/116767571/salesforce-app-builder-certification-flash-cards/
 
-Map<String, List<Schedule__c>> scheduleRecordsMap = new Map<String, List<Schedule__c>>();
+//залогінитися за домопогою session Id
+String session = UserInfo.getSessionId();
+System.debug(session.substring(0, 2));
+System.debug(session.substring(2, session.length()));
+https://org-url/secur/frontdoor.jsp?sid=(UserInfo.getSessionId())
+https://tige--dev1601.lightning.force.com/secur/frontdoor.jsp?sid=00DW0000008q3zf!AQkAQDSO3OIpM3DChULLiG00CMNEa70iGUE3Z1NH5ZKJqFyPQBvX5lOg0oymU09MhhEtcY8PR5rxjgvvwDajbJ2uB8FkbQkv
 
 //витягнути філди з філдсету обєкту
 private static final List<Schema.FieldSetMember> ACCOUNT_FIELD_SET_FIELDS = ObjectType.Account.FieldSets.Time_Invoice_Item.getFields();
