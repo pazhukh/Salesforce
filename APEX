@@ -167,3 +167,26 @@ insert new FeedItem(
     Body=p.Name+' Quantity is down to '+p.Quantity_Remaining__c,
     ParentId = p.Id
 );
+
+
+**************************
+//Wrapper class
+public class ChartHelper{
+  public class ChartData {
+        public String name {get;set;}
+        public Decimal val {get;set;}
+
+        public ChartData(String name, Decimal val){
+            this.name = name;
+            this.val = val;
+        }
+  }
+}
+//виклик в методі з того самого класу (ChartHelper)
+ChartData chtItem = new ChartData('str', 5);
+//виклик з іншого класу
+public class OrderExtension {
+  public void fillPieDataAndTotalQuantity(){
+    ChartHelper.ChartData chartWrap = new ChartHelper.ChartData('str', 5);
+  }
+}
