@@ -133,7 +133,7 @@ global class TaskCreation_Schedular_Batch implements Database.batchable<Contract
 }
 
 \\Запустити
-TaskCreation_Schedular_Batch TaskCreatBatch=new TaskCreation_Schedular_Batch();
+TaskCreation_Schedular_Batch TaskCreatBatch = new TaskCreation_Schedular_Batch();
 String sch='0 5 2 * * ?';
 //System.schedule(String jobName, String cronExp, APEX_OBJECT schedulable);
 System.schedule('Batch Schedule', sch , TaskCreatBatch);
