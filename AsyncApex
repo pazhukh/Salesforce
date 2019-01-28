@@ -94,3 +94,40 @@ public class UpdateParentAccount implements Queueable {
     }
     
 }
+
+*****///****Batchable and Schedulable******///****
+**********************************
+global class TaskCreation_Schedular_Batch implements Database.batchable<Contract>, Schedulable, Database.Stateful {
+    
+    global List<Contract> start(Database.BatchableContext info) {
+        List<Contract> contracts = [
+            SELECT
+                Id, Status, OwnerId
+            FROM
+                Contract
+            WHERE
+                Status = 'Awaiting Signed Contract'
+        ];
+
+    return contracts;
+    }
+    
+    global void execute(Database.BatchableContext info, List<Contract> scope) {
+        List<Task> tasks = new List<Task>();
+        for (Contract contract : scope) {
+            tasks.add(new Task(Subject = 'Other', OwnerId = contract.OwnerId, Status = 'Open'));
+        }
+        System.debug(tasks.size());
+        insert tasks;
+    }
+    
+    global void finish(Database.BatchableContext info) {
+        System.debug('TaskCreation_Schedular_Batch is finished.');
+    }
+    
+    
+    global void execute(SchedulableContext sc) {
+        TaskCreation_Schedular_Batch batch = new TaskCreation_Schedular_Batch();
+        Database.executeBatch(batch, 10);
+    }
+}
