@@ -9,6 +9,9 @@ SIDEBAR FIELDS
 
 ************************************************************SOQL*********************************************
 
+select Geolocation__longitude__s from Boat__c
+
+
 [SELECT Name, (SELECT FirstName,LastName FROM Contacts) FROM Account];
 SELECT Name, (SELECT Name FROM Students__r) FROM Course__c;
 
