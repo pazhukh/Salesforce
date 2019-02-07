@@ -1,5 +1,9 @@
 @testSetup
 
+//get standart PriceBook Id
+Id pricebookId = Test.getStandardPricebookId();
+
+
 //test VFP
 Test.setCurrentPage(Page.Tasks_and_Expenses);
 ApexPages.currentPage().getParameters().put('id', projectPhase.project_cloud__Project__c);
