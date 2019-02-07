@@ -1,6 +1,7 @@
 https://trailhead.salesforce.com/modules/apex_database/units/apex_database_dml
 
 System.debug('getDMLStatements=> ' + Limits.getDMLStatements());
+System.debug('getQueries() => ' + Limits.getQueries());
 
 // Create a list of contacts
 List<Contact> conList = new List<Contact> {
