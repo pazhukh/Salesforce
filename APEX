@@ -18,6 +18,11 @@ https://tige--dev1601.lightning.force.com/secur/frontdoor.jsp?sid=00DW0000008q3z
 private static final List<Schema.FieldSetMember> ACCOUNT_FIELD_SET_FIELDS = ObjectType.Account.FieldSets.Time_Invoice_Item.getFields();
 
 
+//get record type id
+Id recTypeId = Schema.SObjectType.Opportunity.getRecordTypeInfosByDeveloperName().get('RB_Robotics_Process_RT').getRecordTypeId();
+Id recTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('RB Robotics Process RT').getRecordTypeId();
+System.debug(recTypeId);
+
 
 //Attachments - завантажені документи
 https://trailhead.salesforce.com/content/learn/projects/salesforce_developer_workshop/creating_lc_with_apex_controller
