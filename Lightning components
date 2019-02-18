@@ -11,6 +11,11 @@ implements="lightning:actionOverride" - override the standard action
 implements="flexipage:availableForRecordHome" - make the component available for record pages.
 implements="flexipage:availableForAllPageTypes" - Lightning App Builder 
 implements="forceCommunity:themeLayout" - Community Builder
+implements="forceCommunity:searchInterface" - Community
+
+//extends
+extends="forceCommunity:navigationMenuBase"
+
 
 deleting records 
 https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/apex_records_delete.htm
