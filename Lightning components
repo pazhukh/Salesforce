@@ -10,12 +10,13 @@ implements="force:lightningQuickAction" - Quick action
 implements="lightning:actionOverride" - override the standard action
 implements="flexipage:availableForRecordHome" - make the component available for record pages.
 implements="flexipage:availableForAllPageTypes" - Lightning App Builder 
-implements="forceCommunity:themeLayout" - Community Builder
-implements="forceCommunity:searchInterface" - Community
-implements="forceCommunity:availableForAllPageTypes" - Community component (нова компонента доступна в community)
 
-//extends
-extends="forceCommunity:navigationMenuBase"
+
+
+
+
+
+
 
 DESIGN - щоб додати адекватну назви компоненти і можливість редагувати атрибути з Lightning App Builder, Community Builder, or Flow Builder
 https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/components_config_for_app_builder_design_files.htm
@@ -199,3 +200,18 @@ if (state === "ERROR"){
 catch(AuraHandledException e){
     updated = false;
 }
+
+***** Community ******
+**********************
+implements="forceCommunity:themeLayout" - Community Builder
+implements="forceCommunity:searchInterface" - Community
+implements="forceCommunity:availableForAllPageTypes" - Community component (нова компонента доступна в community)
+extends="forceCommunity:navigationMenuBase"
+
+<aura:attribute name="sidebarFooter" type="Aura.Component[]"/>
+<aura:attribute name="navBar" type="Aura.Component[]"/>
+<aura:attribute name="search" type="Aura.Component[]"/>
+
+
+
+
