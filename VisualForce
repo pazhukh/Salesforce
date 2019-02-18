@@ -14,6 +14,8 @@ https://trailhead.salesforce.com/content/learn/modules/lex_dev_visualforce/lex_d
 function isLightningDesktop() {
   return UITheme.getUITheme === "Theme4d";
 }
+//APEX
+UserInfo.getUiThemeDisplayed();
 Theme1—Obsolete Salesforce theme
 Theme2—Salesforce Classic 2005 user interface theme
 Theme3—Salesforce Classic 2010 user interface theme
