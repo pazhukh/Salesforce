@@ -12,6 +12,7 @@ implements="flexipage:availableForRecordHome" - make the component available for
 implements="flexipage:availableForAllPageTypes" - Lightning App Builder 
 implements="forceCommunity:themeLayout" - Community Builder
 implements="forceCommunity:searchInterface" - Community
+implements="forceCommunity:availableForAllPageTypes" - Community component (нова компонента доступна в community)
 
 //extends
 extends="forceCommunity:navigationMenuBase"
