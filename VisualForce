@@ -6,6 +6,21 @@ https://developer.salesforce.com/docs/atlas.en-us.pages.meta/pages/pages_compref
 <apex:pageMessages />
 <apex:slds />
 
+//вертає тип сторінки
+{!$User.UIThemeDisplayed}
+{!$User.UITheme}
+Theme1—Obsolete Salesforce theme
+Theme2—Salesforce Classic 2005 user interface theme
+Theme3—Salesforce Classic 2010 user interface theme
+Theme4d—Modern “Lightning Experience” Salesforce theme
+Theme4t—Salesforce mobile app theme
+Theme4u—Lightning Console theme
+PortalDefault—Salesforce Customer Portal theme
+Webstore—Salesforce AppExchange theme
+
+
+
+
 //static resources
 <apex:stylesheet value="{!URLFOR($Resource.jQueryMobile,'jquery.mobile-1.4.5/jquery.mobile-1.4.5.css')}"/> - zip
 <apex:includeScript value="{! $Resource.jQuery }"/> - звичайний файл
