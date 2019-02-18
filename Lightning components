@@ -212,6 +212,10 @@ extends="forceCommunity:navigationMenuBase"
 <aura:attribute name="navBar" type="Aura.Component[]"/>
 <aura:attribute name="search" type="Aura.Component[]"/>
 
+{!v.sidebarFooter}
+{!v.navBar}
+{!v.search}
+{!v.body}
 
 
 
