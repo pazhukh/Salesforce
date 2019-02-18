@@ -105,3 +105,23 @@ if( isLightningExperienceOrSalesforce1() ) {
 else {
     alert('visualforce');
 }
+
+//JS using SOAP in VisualForcePage
+<apex:page>
+<script src="/soap/ajax/36.0/connection.js" type="text/javascript"></script>
+<script type="text/javascript">
+    // Query for the preference value
+    sforce.connection.sessionId = '{! $Api.Session_ID }';
+    var uiPrefQuery = "SELECT Id, UserPreferencesLightningExperiencePreferred " +
+                      "FROM User WHERE Id = '{! $User.Id }'";
+    var userThemePreferenceResult = sforce.connection.query(uiPrefQuery);
+    
+    // Display the returned result on the page
+    document.addEventListener('DOMContentLoaded', function(event){
+        document.getElementById('userThemePreferenceResult').innerHTML = 
+            userThemePreferenceResult;
+    });
+</script>
+<h1>userThemePreferenceResult (JSON)</h1>
+<pre><span id="userThemePreferenceResult"/></pre>
+</apex:page>
