@@ -1,2 +1,5 @@
 //Залогуватися як інший юзер і коли logout залишає тебе на твоєму юзері
 Session Settings -> "Force relogin after Login-As-User" deselect
+
+//IP address
+Network Access
