@@ -100,3 +100,15 @@ insert servToken;
 Product2 pr = new Product2();
 ApexPages.StandardController sc = new ApexPages.StandardController(pr);
 Product2Extension ext = new Product2Extension(sc);
+
+
+
+//check access to record
+UserRecordAccess JessieZhaoAccess2 = [
+				SELECT
+					RecordId, HasEditAccess
+				FROM
+					UserRecordAccess
+				WHERE
+					UserId = :UserId AND RecordId = :record.Id
+		];
