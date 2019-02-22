@@ -3,3 +3,6 @@ Session Settings -> "Force relogin after Login-As-User" deselect
 
 //IP address
 Network Access
+
+//enabled cash lightning
+Session Settings -> Enable secure and persistent browser caching to improve performance
