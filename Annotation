@@ -1,3 +1,6 @@
+@testSetup
+@isTest
+
 @InvocableMethod(label='Post To PMS' description='Post Opportunity to PMS servise')
 //метод який можна викликати з Process Builder
 
