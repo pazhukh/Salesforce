@@ -195,3 +195,42 @@ public class OrderExtension {
     ChartHelper.ChartData chartWrap = new ChartHelper.ChartData('str', 5);
   }
 }
+
+
+
+*****************************
+add picklist to commponent to change value in Community builder or in Lightning App builder
+<aura:component implements="forceCommunity:availableForAllPageTypes">
+    <aura:attribute name="subject" type="String"/>
+    <aura:attribute name="subSubject" type="String"/>
+</aura:component>
+
+<design:component label="Community Case Form">
+    <design:attribute name="subject" datasource="apex://CommunityFormTiltePicklist" label="Form Title"/>
+    <design:attribute name="subSubject" datasource="apex://CommunityFormSubtitlePicklist" label="Form Sub Title"/>
+</design:component>
+
+public class CommunityFormSubtitlePicklist extends VisualEditor.DynamicPickList{
+	public override VisualEditor.DataRow getDefaultValue(){
+		Schema.DescribeFieldResult titleField = Case.Subtitle__c.getDescribe();
+		List<Schema.PicklistEntry> titleValues = titleField.getPicklistValues();
+
+		VisualEditor.DataRow defaultValue = new VisualEditor.DataRow(titleValues[0].getLabel(), titleValues[0].getValue());
+
+		return defaultValue;
+	}
+
+	public override VisualEditor.DynamicPickListRows getValues() {
+		VisualEditor.DynamicPickListRows rows = new VisualEditor.DynamicPickListRows();
+
+		Schema.DescribeFieldResult titleField = Case.Subtitle__c.getDescribe();
+		List<Schema.PicklistEntry> titleValues = titleField.getPicklistValues();
+
+		for( Schema.PicklistEntry value : titleValues){
+			VisualEditor.DataRow row = new VisualEditor.DataRow(value.getLabel(), value.getValue());
+			rows.addRow(row);
+		}
+
+		return rows;
+	}
+}
