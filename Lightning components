@@ -124,13 +124,27 @@ myFunction : function (component, event, helper) {
 }
 
 
-
-
 //fields validations
 const valid = component.find('tournamentField').reduce((validFields, current) => {
 	current.showHelpMessageIfInvalid();
 	return validFields && current.get('v.validity').valid;
 }, true);
+
+
+//Call Apex Controller
+const action = component.get('c.crateCase');
+action.setParams({
+  caseRecord : caseRecord
+})
+action.setCallback(this, (response)=> {
+  if (response.getState() === 'SUCCESS') {
+    component.set('v.att-name', response.getReturnValue());
+  } else {
+  }
+})
+action.setStorable();
+$A.enqueueAction(action);
+
 
 
 -*-*-*-*-*-*-*-* events *-*-*-*-*-*-*-*
