@@ -168,7 +168,13 @@ homeEvent.setParams({
 });
 homeEvent.fire();
 
-
+//navigate to url
+conset url = '/some-url';
+const navigateEvt = $A.get('e.force:navigateToURL');
+navigateEvt.setParams({
+    url: url
+});
+navigateEvt.fire();
 
 //toast (messaging)
 https://developer.salesforce.com/docs/component-library/bundle/force:showToast/documentation
@@ -187,7 +193,6 @@ toastEvent.setParams({
 	]
 });
 toastEvent.fire();
-
 
 //refresh page
 $A.get('e.force:refreshView').fire();
