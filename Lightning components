@@ -137,7 +137,8 @@ action.setParams({
   caseRecord : caseRecord
 })
 action.setCallback(this, (response)=> {
-  if (response.getState() === 'SUCCESS') {
+  const state = response.getState();
+  if (component.isValid() &&  state === 'SUCCESS') {
     component.set('v.att-name', response.getReturnValue());
   } else {
   }
