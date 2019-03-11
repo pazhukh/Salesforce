@@ -149,8 +149,13 @@ $A.enqueueAction(action);
 
 
 -*-*-*-*-*-*-*-* events *-*-*-*-*-*-*-*
-const rerenderEvent = $A.get('e.c:rerenderEvent');
-rerenderEvent.fire();
+https://developer.salesforce.com/docs/component-library/bundle/force:closeQuickAction/documentation
+
+$A.get('e.c:rerenderEvent').fire();
+$A.get("e.force:closeQuickAction").fire(); 
+//refresh page
+$A.get('e.force:refreshView').fire();
+
 component.getEvent('createNewTourn').fire();
 
 //navigate to record page by it Id
@@ -195,8 +200,7 @@ toastEvent.setParams({
 });
 toastEvent.fire();
 
-//refresh page
-$A.get('e.force:refreshView').fire();
+
 
 
 ****Exeptions****
