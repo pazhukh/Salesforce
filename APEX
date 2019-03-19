@@ -83,6 +83,9 @@ PageReference pageRef = new PageReference('/apex/EditQuotePage?newId='+thisQuote
 pageRef.setRedirect(true);
 pageRef.getParameters().put('redirect', 'true');
 
+//check if user has access to this field
+Schema.sObjectType.Contact.fields.Email.isAccessible()
+
 
 **********************
 Visualforce page
