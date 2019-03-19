@@ -8,12 +8,15 @@ PHONE FIELDS
 SIDEBAR FIELDS
 
 ************************************************************SOQL*********************************************
+//Date Formats and Date Literals
+https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql_select_dateformats.htm
 
-select Geolocation__longitude__s from Boat__c
 
 
-[SELECT Name, (SELECT FirstName,LastName FROM Contacts) FROM Account];
+[SELECT Name, (SELECT FirstName FROM Contacts) FROM Account];
 SELECT Name, (SELECT Name FROM Students__r) FROM Course__c;
+
+
 
 //*/*/*/*/*/*/*//
 Динамічна Кверя
