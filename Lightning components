@@ -250,5 +250,21 @@ extends="forceCommunity:navigationMenuBase"
 {!v.search}
 {!v.body}
 
+***** force:recordData ******
+*****************************
+<aura:attribute name="record" type="Object" description="The record object to be displayed"/>
+<aura:attribute name="orderRecord" type="Object" description="A simplified view record object to be displayed"/>
+	
+    <force:recordData aura:id="record"
+        recordId="{!v.recordId}"
+        targetError="{!v.recordError}"
+        targetRecord="{!v.record}"
+        targetFields ="{!v.orderRecord}"
+        fields="Id, Status, Purchase_or_License1__c"
+        recordUpdated="{!c.doInit}" />
 
+//controller
+doInit : function(component, event, helper) {
+	var order = component.get('v.orderRecord');
+}
 
