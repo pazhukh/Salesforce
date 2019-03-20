@@ -147,7 +147,22 @@ $A.enqueueAction(action);
 https://developer.salesforce.com/docs/component-library/bundle/force:closeQuickAction/documentation
 
 $A.get('e.c:rerenderEvent').fire();
+//close action modal
 $A.get("e.force:closeQuickAction").fire(); 
+//hide by css
+<aura:html tag="style">
+        .slds-backdrop {
+    		background: rgba(43, 40, 38, 0) !important;  
+    	}
+    	.forceModal {
+    		display:none !important;
+   		}
+		body{
+			overflow: visible!important;
+		} 
+	</aura:html>
+
+
 //refresh page
 $A.get('e.force:refreshView').fire();
 
