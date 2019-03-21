@@ -45,6 +45,14 @@ public class WarehouseSyncSchedule implements Schedulable{
 WarehouseSyncSchedule newSchdule = new WarehouseSyncSchedule();
 String launchTime = '00 00 01 * * ?';
 System.schedule('some name', launchTime, newSchdule);
+
+//запускаємо через 2 хв
+String hour = String.valueOf(Datetime.now().hour());
+String min = String.valueOf(Datetime.now().minute() + 2); 
+String ss = String.valueOf(Datetime.now().second());
+String nextFireTime = ss + ' ' + min + ' ' + hour + ' * * ?';
+System.schedule('My Job Started At ' + String.valueOf(Datetime.now()), nextFireTime, new ContactActivity_Schedule());
+
 /*/*/*/*/
 
 *****///****Batchable******///****
