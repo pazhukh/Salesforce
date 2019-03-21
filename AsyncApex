@@ -20,6 +20,11 @@ public class DailyLeadProcessorTest {
             new DailyLeadProcessor());//створює екземпляр класа через певний час, який вставили в 
             //public static String CRON_EXP
     }
+    or just execute
+    
+    ContactActivity_Schedule cs = new ContactActivity_Schedule();
+    cs.execute(null);
+    
 }
 
 //метод який запуститься в майбутньому
