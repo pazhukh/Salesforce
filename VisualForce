@@ -56,6 +56,22 @@ https://www.lightningdesignsystem.com/icons/
     }
 </script>
 
+//або
+<apex:inputField value="{!caseToInsert.Cost_1__c}">
+    <apex:actionSupport action="{!calculationForPartsUsed}" event="onchange" status="actStatusId"/>
+</apex:inputField> 
+<apex:actionstatus id="actStatusId">
+    <apex:facet name="start">
+        <div class="waitingSearchDiv" id="el_loading" style="background-color: #DCD6D6;
+                                                             height: 100%;opacity:0.65;width:100%;"> 
+            <div class="waitingHolder" style="top: 74.2px; width: 91px;">
+                <img class="waitingImage" src="/img/loading.gif" title="Please Wait..." />
+              <span class="waitingDescription">Loading...</span>
+            </div>
+        </div>
+    </apex:facet>
+</apex:actionstatus>
+
 
 
 
