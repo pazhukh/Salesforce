@@ -3,7 +3,9 @@ https://json2apex.herokuapp.com/
 //тести для rest
 https://trailhead.salesforce.com/content/learn/modules/apex_integration_services/apex_integration_rest_callouts
 
-
+//encoding url
+'https://api.apps.us.bluescape.com/organizations/4543/workspaces?query=' + encodedQuery;
+EncodingUtil.urlEncode(workspaceName, 'UTF-8').replaceAll('\\+','%20');
 
 
 //JSON class methods
