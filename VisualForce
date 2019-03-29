@@ -26,6 +26,21 @@ PortalDefault—Salesforce Customer Portal theme
 Webstore—Salesforce AppExchange theme
 
 
+//remove record(row) in table
+<apex:column headervalue="Action">
+    <apex:commandlink value="Remove" action="{!removeAsset}" immediate="true">
+        <!-- Pass the row number to the controller so that we know which row to remove -->
+        <apex:param name="assetId" value="{!asset.Id}"/>
+    </apex:commandlink>
+</apex:column>
+public void removeAsset(){
+		Id assetId = System.currentPageReference().getparameters().get('assetId');
+		//If the contact is an existing contact then add it to the list to delete from the databse
+		//Remove the contact from the table
+		selectedAssetsMap.remove(assetId);
+	}
+
+
 
 
 //static resources
