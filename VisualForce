@@ -93,6 +93,10 @@ https://www.lightningdesignsystem.com/icons/
 *****************
 *****Таблиця*****
 *****************
+public Map<Id, Asset> selectedAssetsMap {get;set;}
+public List<Asset> selectedAssetsList { get { return selectedAssetsMap.values(); } }
+
+
 <apex:pageBlockTable value="{! Account.contacts}" var="cont">
             <apex:column>
             	<apex:outputLink value="{! URLFOR($Action.Contact.Edit, cont.Id)}">
