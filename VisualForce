@@ -111,6 +111,13 @@ public List<Asset> selectedAssetsList { get { return selectedAssetsMap.values();
             <apex:column value="{!cont.Name}"/>
             <apex:column value="{!cont.Title}"/>
             <apex:column value="{!cont.Phone}"/>
+	    
+	    <apex:column value="{!wrapAsset.asset.Status}">
+                <apex:facet name="header">
+                    Status
+                </apex:facet>
+            </apex:column>
+	    
         </apex:pageBlockTable>
 
 //список контактів
