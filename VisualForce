@@ -3,8 +3,9 @@ https://developer.salesforce.com/docs/atlas.en-us.pages.meta/pages/pages_intro.h
 //стандартні компоненти VFP
 https://developer.salesforce.com/docs/atlas.en-us.pages.meta/pages/pages_compref.htm
 
-<apex:pageMessages />
 <apex:slds />
+<apex:pageMessages />
+ApexPages.addMessage(new ApexPages.message(ApexPages.severity.ERROR, e.getMessage()));
 
 //вертає тип сторінки
 https://trailhead.salesforce.com/content/learn/modules/lex_dev_visualforce/lex_dev_visualforce_multipurpose_pages
