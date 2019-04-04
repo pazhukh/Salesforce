@@ -8,6 +8,15 @@ Id pricebookId = Test.getStandardPricebookId();
 Test.setCurrentPage(Page.Tasks_and_Expenses);
 ApexPages.currentPage().getParameters().put('id', projectPhase.project_cloud__Project__c);
 
+//extension
+public AssetsToAddExt(ApexPages.StandardSetController controller) {}
+//test
+Test.setCurrentPage(Page.AssetsToAdd);
+ApexPages.currentPage().getParameters().put('id', order.Id);
+ApexPages.StandardSetController stdSetController = new ApexPages.StandardSetController(List<Order>);
+AssetsToAddExt orderExt = new AssetsToAddExt(stdSetController);
+
+
 
 System.assertEquals();
  Test.startTest();
