@@ -268,3 +268,13 @@ doInit : function(component, event, helper) {
 	var order = component.get('v.orderRecord');
 }
 
+
+****************************************************************
+Style Css
+****************************************************************
+
+@media only screen and (max-width: 1023px) {
+    .THIS .warning-wrap{
+        font-size: 22px;
+    }
+}
