@@ -1,0 +1,1 @@
+HOUR(TIMEVALUE( Final_Approve_Date__c - 7/24)) - return 0-24 from 12h forma datime.
