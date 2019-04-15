@@ -34,18 +34,48 @@ PortalDefault—Salesforce Customer Portal theme
 Webstore—Salesforce AppExchange theme
 
 //loader on action
+        .overlay{
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.25;
+            z-index: 1000;
+            background-color: black;
+        }
+        .loader{
+            position: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            z-index: 1001;
+        }
+        .loader-inner{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            width: 140px;
+            padding: 10px;
+        }
+        .loader-inner img{
+            margin-right: 10px;
+        }
 <apex:pageMessages id="msgId"/>
 <apex:actionStatus id="waiting" >
             <apex:facet name="start" >
-                <div style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.25; z-index: 1000; background-color: black;">
-                    &nbsp;
-                </div>
-                <div style="position: fixed; left: 0; top: 0; bottom: 0; right: 0; z-index: 1001; margin: 15% 50%">
-                    <div style="display: inline-block; padding: 2px; background-color: #fff; width: 125px;">
-                        <img src="/img/loading.gif" style="float: left; margin: 8px;" />
-                        <span style="display: inline-block; padding: 10px 0px;">Please Wait...</span>
-                    </div>
-                </div>
+                 <div class="overlay"></div>
+           	 <div class="loader">
+		    <div class="loader-inner">
+		      <img src="/img/loading.gif" />
+		      <span>Please Wait...</span>
+		    </div>
+		 </div>
             </apex:facet>
         </apex:actionStatus>
 <apex:form id="main-form">
