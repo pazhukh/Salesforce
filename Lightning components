@@ -303,3 +303,16 @@ Style Css
 }
 
 /* some comments */
+
+
+
+****************************************************************
+APEX
+****************************************************************
+//get picklist values
+List<Map<String, String>> courseTypeValuesList = new List<Map<String, String>>();
+Schema.DescribeFieldResult fieldResult = Schema.Opportunity.Course_Type__c.getDescribe();
+List<Schema.PicklistEntry> ple = fieldResult.getPicklistValues();
+for( Schema.PicklistEntry pickListVal : ple){
+	courseTypeValuesList.add(new Map<String, String>{'value' => pickListVal.getValue(), 'label' => pickListVal.getLabel() });
+}
