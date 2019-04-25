@@ -16,6 +16,29 @@ DESIGN - щоб додати адекватну назви компоненти 
 https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/components_config_for_app_builder_design_files.htm
 
 
+
+******* додаємо до VFP *********
+//VFP
+<apex:includeLightning />
+<div id="lightning-wrap" />
+
+<script>
+$Lightning.use("c:TrainingDivisionBookingFormApp", function() {
+$Lightning.createComponent("c:TrainingDivisionBookingForm",
+{opportunityId : '{!opportunity.Id}'},
+"lightning-wrap",
+function(cmp) {
+    console.log("button was created");
+});
+});
+</script>
+//Lightning app (TrainingDivisionBookingFormApp)
+<aura:application access="GLOBAL" extends="ltng:outApp" implements="ltng:allowGuestAccess">
+    <aura:dependency resource="c:TrainingDivisionBookingForm"/>
+</aura:application>
+    
+    
+
 deleting records 
 https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/apex_records_delete.htm
 
