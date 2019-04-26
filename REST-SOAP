@@ -48,3 +48,21 @@ public class MindBodyGetAccessMock implements HttpCalloutMock{
         return res;
     }
 }
+
+
+********************
+SF WEB SERVICE
+********************
+https://trailhead.salesforce.com/en/content/learn/modules/apex_integration_services/apex_integration_webservices
+
+call to SF WEB SERVICE
+private static void updateOppByWebService(Opportunity opportunity) {
+	Http http = new Http();
+	HttpRequest req = new HttpRequest();
+	req.setMethod('PUT');
+	req.setEndpoint(URL.getSalesforceBaseUrl().toExternalForm() + '/services/apexrest/BookingForm/');
+	req.setHeader('Content-Type', 'application/json');
+	req.setHeader('Authorization', 'Bearer ' + UserInfo.getSessionId());
+	req.setBody(JSON.serialize(opportunity));
+	HTTPResponse res = http.send(req);
+}
