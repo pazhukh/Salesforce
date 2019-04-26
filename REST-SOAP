@@ -56,6 +56,20 @@ SF WEB SERVICE
 https://trailhead.salesforce.com/en/content/learn/modules/apex_integration_services/apex_integration_webservices
 
 call to SF WEB SERVICE
+@RestResource(urlMapping='/BookingForm/*')
+global class TrainingDivisionBookingFormRestResource {
+
+	@HttpPut
+	global static void doUpdate() {
+		RestRequest req = RestContext.request;
+		RestResponse res = RestContext.response;
+		String opportunityJson = req.requestBody.toString();
+
+		Opportunity opp = (Opportunity)JSON.deserialize(opportunityJson, Opportunity.Class);
+		System.debug(opp.StageName);
+	}
+}
+//call to resource above
 private static void updateOppByWebService(Opportunity opportunity) {
 	Http http = new Http();
 	HttpRequest req = new HttpRequest();
