@@ -109,6 +109,12 @@ href="javascript:void(0);"
 ****************************************************************
 Controller
 ****************************************************************
+$A.util.addClass(component.find('spinner'), 'slds-hide');
+$A.util.removeClass(), $A.util.toggleClass()
+
+var isDefined = !$A.util.isUndefined(cmp.get("v.label"));
+var isEmpty = $A.util.isEmpty(cmp.get("v.label"));
+
 
 //get value of clicked element
 click : function(component, event, helper) {
