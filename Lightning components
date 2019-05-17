@@ -72,6 +72,10 @@ Component
 <aura:handler name="change" value="{!v.boat}" action="{!c.itemsChange}"/>
 <aura:attibute name="boat" type="string"/>
 
+https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/js_renderers.htm
+<aura:handler name="render" value="{!this}" action="{!c.itemsChange}"/>
+<aura:handler name="afterRender" value="{!this}" action="{!c.itemsChange}"/>
+
 
 
 
