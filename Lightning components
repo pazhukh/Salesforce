@@ -7,6 +7,7 @@ https://developer.salesforce.com/docs/atlas.en-us.214.0.lightning.meta/lightning
 //implements to componen
 implements="force:appHostable" - Tabs
 implements="force:lightningQuickAction" - Quick action 
+implements="forceCommunity:availableForAllPageTypes" access="global" -Comunity
 implements="lightning:actionOverride" - override the standard action
 implements="flexipage:availableForRecordHome" - make the component available for record pages.
 implements="flexipage:availableForAllPageTypes" - Lightning App Builder 
