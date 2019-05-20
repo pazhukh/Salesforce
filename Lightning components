@@ -108,7 +108,8 @@ $A.util.addClass(component.find('spinner'), 'slds-hide');
 // тег а без href
 href="javascript:void(0);"
 
-
+//SVG, icon
+<lightning:icon iconName="utility:close"/>
 
 
 ****************************************************************
