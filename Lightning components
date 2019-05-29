@@ -112,6 +112,8 @@ href="javascript:void(0);"
 <lightning:icon iconName="utility:close"/>
 
 
+style="{!'background-image: url(' + $Resource.CommunityHeroBackground + ')'}
+
 ****************************************************************
 Controller
 ****************************************************************
@@ -279,11 +281,13 @@ extends="forceCommunity:navigationMenuBase"
 <aura:attribute name="sidebarFooter" type="Aura.Component[]"/>
 <aura:attribute name="navBar" type="Aura.Component[]"/>
 <aura:attribute name="search" type="Aura.Component[]"/>
+<aura:attribute name="banner" type="Aura.Component[]"/>
 
 {!v.sidebarFooter}
 {!v.navBar}
 {!v.search}
 {!v.body}
+{!v.banner}
 
 ***** force:recordData ******
 *****************************
