@@ -48,7 +48,7 @@ public class WarehouseSyncSchedule implements Schedulable{
 
 //запускаємо скедюебл через девконсоль або Apex Classes-Schedule Apex
 WarehouseSyncSchedule newSchdule = new WarehouseSyncSchedule();
-String launchTime = '00 00 01 * * ?';
+String launchTime = '0 0 08 * * ?'; //every day at 8 am
 System.schedule('some name', launchTime, newSchdule);
 
 //запускаємо через 2 хв
