@@ -61,6 +61,23 @@ Database.query('SELECT Name FROW Account');
         }
 
 
+
+//recursive method to check if response returning object under path //'Linkage'=>'ParentOrganization'=>'OrganizationPrimaryName'
+public static Object getHierarchyLastItem(List<String> keys, Map<String, Object> targetMap, Integer currentIndex) {
+  if (currentIndex == keys.size()-1 || targetMap == null || !targetMap.containsKey(keys.get(currentIndex))) {
+            
+    return targetMap.get(keys.get(currentIndex));
+  }
+  targetMap = (Map<String, Object>)targetMap.get(keys.get(currentIndex));
+    	
+  return getHierarchyLastItem(keys, targetMap, ++currentIndex);
+}
+
+Map<String, Object> responseBody = (Map<String, Object>)JSON.deserializeUntyped(response.getBody());
+Object organizationPrimaryName = getHierarchyLastItem(new List<String>{'Linkage','ParentOrganization', 'OrganizationPrimaryName'}, responseBody, 0)
+    
+
+
 **********************
 for(String keyInMap : myMap.keySet()) {}
 for(sObject object : myMap.values()){}
