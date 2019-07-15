@@ -114,6 +114,9 @@ href="javascript:void(0);"
 
 style="{!'background-image: url(' + $Resource.CommunityHeroBackground + ')'}
 
+//Site Url
+<a href="{! $Site.siteUrlPrefix + '/detail/' + v.simpleRecord.Id}">Go to details</a>
+
 ****************************************************************
 Controller
 ****************************************************************
