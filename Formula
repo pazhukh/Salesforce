@@ -1,1 +1,7 @@
 HOUR(TIMEVALUE( Final_Approve_Date__c - 7/24)) - return 0-24 from 12h forma datime (7-it is timezone).
+
+//якщо якесь поле має значення тоді вернути його, якщо всі поля пусті тоді вернути ''
+{!BLANKVALUE(Asset.Laptop_Serial_Number__c, 
+ BLANKVALUE(Asset.Printer_Serial_Number__c, 
+ BLANKVALUE(Asset.Team_Viewer_Number__c, 
+ BLANKVALUE(Asset.SerialNumber, ''))))}
