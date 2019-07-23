@@ -314,6 +314,19 @@ doInit : function(component, event, helper) {
 ****************************************************************
 Style Css
 ****************************************************************
+//upload custom font as static resource with name Futura
+@font-face {
+    font-family: 'Futura';
+    src: url('/resource/Futura/Futura.woff') format('woff');
+}
+@font-face {
+    font-family: 'FuturaBT-Medium';
+    src: url('/resource/Futura/FuturaBT-Medium.woff') format('woff');
+}
+.THIS {
+    font-family: 'Futura';
+}
+
 
 @media only screen and (max-width: 1023px) {
     .THIS .warning-wrap{
