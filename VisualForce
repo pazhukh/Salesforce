@@ -8,9 +8,54 @@ https://developer.salesforce.com/docs/atlas.en-us.pages.meta/pages/pages_compref
 ApexPages.addMessage(new ApexPages.message(ApexPages.severity.ERROR, e.getMessage()));
 
 
-
-applyBodyTag="false" - можна додавати CSS коли RenderAs="PDF"
+******
 renderAs="PDF"
+******
+<apex:page standardController="Quote" extensions="QuotePDFExtension"
+		   renderAs="PDF" applyBodyTag="false" applyHtmlTag="false"
+		   showHeader="false" sidebar="false">
+	<html>
+		<head>
+			<style>
+				@page {
+					font-family: Arial, Helvetica, sans-serif;
+					margin: 2cm;
+
+					@top-center {
+						content: element(header)
+					}
+					@bottom-center {
+						content: element(footer);
+					}
+				}
+				div.header, div.footer{
+					display: block;
+					padding: 3px;
+					font-family: Arial, Helvetica, sans-serif;
+					text-align: center;
+				}
+				div.header{
+					position: running(header);
+					border-bottom: 5px solid #4481BA;
+					font-size: 18px;
+				}
+				div.footer{
+					position: running(footer);
+					color: #808080;
+					border-top: 5px solid #4481BA;
+				}
+				</style>
+		</head>
+		<body>
+			<div class="header" name="header">
+				<p>Salesforce.com Implementation Offer</p>
+			</div>
+			<div class="footer" name="footer">
+				<p>Hello@wiserspread.com | www.wiserspread.com | 650.454.9544</p>
+			</div>
+		</body>
+	</html>
+</apex:page>
 
 
 
