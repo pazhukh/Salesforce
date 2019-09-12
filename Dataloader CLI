@@ -1,0 +1,5 @@
+Windows Task Schduler Bach file
+echo "Starting"
+cls
+cd "C:\Users\Tether.Dev\dataloader\v47.0.0\bin" //path to bin folder
+CALL process.bat "C:\Users\Tether.Dev\dataloader\v47.0.0\WSsync" "accountInsert"
