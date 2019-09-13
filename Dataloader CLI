@@ -1,5 +1,71 @@
-Windows Task Schduler Bach file
+https://developer.salesforce.com/docs/atlas.en-us.dataLoader.meta/dataLoader/command_line_create_encryption_key.htm
+https://www.youtube.com/watch?v=A8A10rsg4rc
+
+*********
+process-conf.xml
+*********
+
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+    <bean id="recordsUpsert"
+        class="com.salesforce.dataloader.process.ProcessRunner"
+        singleton="false">
+        <description>accountInsert job gets the account record from the CSV file 
+            and inserts it into Salesforce.</description>
+        <property name="name" value="recordsUpsert"/>
+        <property name="configOverrideMap">
+            <map>
+                <entry key="sfdc.debugMessages" value="true"/>
+                <entry key="sfdc.debugMessagesFile" value="C:\Users\Tether.Dev\dataloader\v47.0.0\TetherSync\TetherTracking.log"/>
+                <entry key="sfdc.endpoint" value="https://login.salesforce.com"/>
+                <entry key="sfdc.username" value="tether@kaysmedical.com"/>
+                <!--Password below has been encrypted using key file, therefore, it will not work without the key setting: 
+                    process.encryptionKeyFile.
+                    The password is not a valid encrypted value, please generate the real value using the encrypt.bat utility -->
+                <entry key="sfdc.password" value="336524200d0a7b8a3b124eafbfb03bccbf9f482f7d3209c6617b7ef73ccc8c76"/>
+                <entry key="process.encryptionKeyFile" value="c:\Users\Tether.Dev\.dataloader\dataLoader.key"/>
+                <entry key="sfdc.timeoutSecs" value="600"/>
+                <entry key="sfdc.loadBatchSize" value="200"/>
+                <entry key="sfdc.entity" value="SQL_Server_Tms_Data__c"/>
+		            <entry key="sfdc.externalIdField" value="Record_Id__c"/>
+                <entry key="process.operation" value="upsert"/>
+                <entry key="process.mappingFile" value="C:\Users\Tether.Dev\dataloader\v46.0.0\TetherSync\recordsUpsertMap.sdl"/>
+                <entry key="dataAccess.name" value="C:\Users\Tether.Dev\dataloader\v46.0.0\TetherSync\today'sRecordsToSF.csv"/>
+
+                <entry key="process.outputSuccess" value="C:\Users\Tether.Dev\dataloader\v46.0.0\TetherSync\recordsUpsert_success.csv"/>
+                <entry key="process.outputError" value="C:\Users\Tether.Dev\dataloader\v46.0.0\TetherSync\recordsUpsert_error.csv"/>
+                <entry key="dataAccess.type" value="csvRead"/>
+            </map>
+        </property>
+    </bean>
+</beans>
+
+
+
+*********
+sendDataToSF.bat
+*********
+
 echo "Starting"
 cls
-cd "C:\Users\Tether.Dev\dataloader\v47.0.0\bin" //path to bin folder
-CALL process.bat "C:\Users\Tether.Dev\dataloader\v47.0.0\WSsync" "accountInsert"
+cd "C:\Users\Tether.Dev\dataloader\v46.0.0\bin"
+CALL process.bat "C:\Users\Tether.Dev\dataloader\v46.0.0\TetherSync" "recordsUpsert"
+
+
+*********
+recordsUpsertMap.sdl
+*********
+
+#Mapping values
+#Thu Sep 12 15:57:09 BST 2019
+record_id=Record_Id__c
+destcli=Destcli__c
+extno=Extno__c
+duration=Duration__c
+calldate=Calldate__c
+direction=Direction__c
+
+*********
+today'sRecordsToSF.csv
+*********
+//csv with records that should insert to SF
