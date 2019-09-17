@@ -1,0 +1,13 @@
+******
+EVENTS
+******
+//Parent
+<c-child onmyevent={handleMyEvent}></c-child>
+
+//Child
+const myEvent = new CustomEvent('myevent', {
+   detail: 'someData',     
+   bubbles: false,
+   composed: false
+});
+this.dispatchEvent(myEvent);
