@@ -25,6 +25,10 @@ this.dispatchEvent(myEvent);
 *******
 Pub-sub
 *******
+//Pubsub with removed all the pageRef checking (Work in Community and Lighning App)
+https://gist.github.com/kmesic/262887799fb70be94707cb0b87936e7b
+
+
 https://trailhead.salesforce.com/en/content/learn/projects/lwc-build-flexible-apps/inter-comp-events
 
 /**
