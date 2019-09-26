@@ -37,6 +37,16 @@ public static void updatePicturePath(String recId){
         speaker.Picture_Path__c = '/sfc/servlet.shepherd/version/download/'+ ver.Id;
         upsert speaker;
 }
+
+//create document
+Document doc = new Document();
+doc.FolderId = UserInfo.getUserId();
+doc.Body = EncodingUtil.base64Decode(image);
+doc.Type = type;
+doc.IsPublic = true;
+doc.ContentType = mimetype;
+doc.Name = productName + ' - Image' + (documentIndex + 1);
+insert doc;
     
     
 //apex show massage in Visual Force
