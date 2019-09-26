@@ -5,3 +5,18 @@ HOUR(TIMEVALUE( Final_Approve_Date__c - 7/24)) - return 0-24 from 12h forma dati
  BLANKVALUE(Asset.Printer_Serial_Number__c, 
  BLANKVALUE(Asset.Team_Viewer_Number__c, 
  BLANKVALUE(Asset.SerialNumber, ''))))}
+
+//IMAGE
+***Document***
+IF(
+isblank( Facebook__c),
+"",
+IMAGE("/servlet/servlet.FileDownload?file=015S0000000ysAP", "", 45, 55)
+)
+
+***ContentDocument (File)***
+IF(
+isblank( Facebook__c),
+"",
+IMAGE("/sfc/servlet.shepherd/version/download/0681p000005JlNR", "Facebook")
+)
