@@ -14,10 +14,18 @@ this.dispatchEvent(myEvent);
 
 
 
+******
+Import JS function
+******
+//helper.js
+const calc = (a, b)=> {
+    return a * b;
+}
+export {calc};
 
-
-
-
+//componentName.js
+import { calc } from './helper'; //if from another component then import { calc } from 'c/helper';
+calc(2, 9)
 
 
 
