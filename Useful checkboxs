@@ -1,6 +1,9 @@
 //Залогуватися як інший юзер і коли logout залишає тебе на твоєму юзері
 Session Settings -> "Force relogin after Login-As-User" deselect
 
+//Дозволять Адміну логінитися під будь-яким користувачем
+Login Access Policies -> Administrators Can Log in as Any User
+
 //IP address
 Network Access
 
