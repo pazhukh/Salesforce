@@ -47,6 +47,29 @@ doc.IsPublic = true;
 doc.ContentType = mimetype;
 doc.Name = productName + ' - Image' + (documentIndex + 1);
 insert doc;
+//create content document
+ContentVersion contentVersion = new ContentVersion(
+	Title = 'IOS-Pass',
+	PathOnClient = 'IOS-Pass.pkpass',
+	VersionData = resourceBlob,
+	IsMajorVersion = false
+);
+insert contentVersion;
+ContentVersion cv = [
+		SELECT
+			ContentDocumentId
+		FROM
+			ContentVersion
+		WHERE
+			Id = :contentVersion.Id
+];
+ContentDocumentLink cdl = new ContentDocumentLink(
+		LinkedEntityId = memberId,
+		ContentDocumentId = cv.ContentDocumentId,
+		Visibility = 'AllUsers',
+		ShareType = 'V'
+);
+insert cdl;
     
     
 //apex show massage in Visual Force
