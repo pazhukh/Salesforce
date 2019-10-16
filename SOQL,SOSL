@@ -15,8 +15,7 @@ https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforc
 
 [SELECT Name, (SELECT FirstName FROM Contacts) FROM Account];
 SELECT Name, (SELECT Name FROM Students__r) FROM Course__c;
-
-
+[SELECT Id FROM Account WHERE Start_Date__c >= 2019-08-01T00:00:00Z AND Start_Date__c <= 2019-10-08T23:59:59Z];
 
 //*/*/*/*/*/*/*//
 Динамічна Кверя
