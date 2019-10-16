@@ -47,6 +47,7 @@ doc.IsPublic = true;
 doc.ContentType = mimetype;
 doc.Name = productName + ' - Image' + (documentIndex + 1);
 insert doc;
+
 //create content document
 ContentVersion contentVersion = new ContentVersion(
 	Title = 'IOS-Pass',
@@ -70,6 +71,19 @@ ContentDocumentLink cdl = new ContentDocumentLink(
 		ShareType = 'V'
 );
 insert cdl;
+
+//create attachment
+Attachment attachment = new Attachment();
+attachment.Body = resourceBlob;
+attachment.Name = 'IOS-Pass-Attach.pkpass';
+attachment.ParentId = memberId;
+insert attachment;
+    
+    
+    
+    
+    
+    
     
     
 //apex show massage in Visual Force
