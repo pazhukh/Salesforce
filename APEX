@@ -318,4 +318,23 @@ mail.setToAddresses(toEmails);
 mail.setSubject('Community Case creation failed');
 mail.setPlainTextBody(e.getMessage());
 
+
 Messaging.sendEmail(new Messaging.SingleEmailMessage[] { mail });
+public static void sendEmailToContact(Contact contact) {
+        EmailTemplate emailTemplate = [SELECT Id FROM EmailTemplate WHERE DeveloperName = 'credit_application_form'];
+        
+        List<String> toAddress = new List<String>();
+        toAddress.add(contact.Email);
+        
+        Messaging.SingleEmailMessage mail = new Messaging.SingleEmailMessage();
+        mail.setTemplateId(emailTemplate.Id);
+        mail.setToAddresses(toAddress);
+        mail.setTargetObjectId(contact.Id);
+        List<Messaging.SingleEmailMessage> messages = new List<Messaging.SingleEmailMessage>();
+        messages.add(mail);
+        try {
+            Messaging.sendEmail(messages);
+        } catch (Exception e) {
+            throw e;
+        }
+    }
