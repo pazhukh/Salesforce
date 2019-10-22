@@ -340,8 +340,9 @@ public static void sendEmailToContact(Contact contact) {
     }
 
 
-
+*****************************
 Encrypt/decrypt
+//id in url
 private static String encryptMemberId(Id memberId) {
 	Blob key = EncodingUtil.base64Decode(MembershipTriggerHandler.EAS_KAY);
 	Blob data = Blob.valueOf(memberId);
