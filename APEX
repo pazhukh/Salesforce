@@ -338,3 +338,23 @@ public static void sendEmailToContact(Contact contact) {
             throw e;
         }
     }
+
+
+
+Encrypt/decrypt
+private static String encryptMemberId(Id memberId) {
+	Blob key = EncodingUtil.base64Decode(MembershipTriggerHandler.EAS_KAY);
+	Blob data = Blob.valueOf(memberId);
+	Blob encrypted = Crypto.encryptWithManagedIV('AES128', key, data);
+	String encryptedId =  EncodingUtil.convertToHex(encrypted);
+
+	return encryptedId;
+}
+private static String decryptMemberId(String encryptedMemberId) {
+	Blob key = EncodingUtil.base64Decode(MembershipTriggerHandler.EAS_KAY);
+	Blob decryptedFromHex = EncodingUtil.convertFromHex(encryptedMemberId);
+	Blob decryptedBlob = Crypto.decryptWithManagedIV('AES128', key, decryptedFromHex);
+	String decryptedMemberId = decryptedBlob.toString();
+
+	return decryptedMemberId;
+}
