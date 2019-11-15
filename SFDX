@@ -13,3 +13,6 @@ sfdx force:org:list
 
 //connect project to org, set default org
 sfdx force:config:set defaultusername=AliasName
+
+//disconnect org => delete from list of connected orgs
+sfdx force:auth:logout -u AliasName
