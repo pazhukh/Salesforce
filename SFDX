@@ -7,3 +7,9 @@ $ sfdx force:auth:web:login -a devHub -d
 $ sfdx force:org:list
 $ sfdx force:org:create -s -f config/project-scratch-def.json -a workScratch -d 30
 
+
+//list of all connected orgs
+sfdx force:org:list
+
+//connect project to org, set default org
+sfdx force:config:set defaultusername=AliasName
