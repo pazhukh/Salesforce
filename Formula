@@ -20,3 +20,6 @@ isblank( Facebook__c),
 "",
 IMAGE("/sfc/servlet.shepherd/version/download/0681p000005JlNR", "Facebook")
 )
+
+*** add second to dateTime ***
+DATETIMEVALUE( Date_time__c ) + ( 5 / 86400 )
