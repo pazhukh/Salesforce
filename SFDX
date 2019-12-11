@@ -18,3 +18,9 @@ sfdx force:config:set defaultusername=AliasName
 
 //disconnect org => delete from list of connected orgs
 sfdx force:auth:logout -u AliasName
+
+
+//deploy metadata to Prod
+targetusername use only if project in VScode do not connect to the org
+sfdx force:source:deploy --sourcepath force-app/main/default/classes/OfferPdfController.cls --testlevel RunSpecifiedTests -r OfferPdfControllerTest
+sfdx force:source:deploy --sourcepath force-app/main/default/classes/AuraControllerOpportunity.cls --targetusername engineering_team@movinga.com --testlevel RunLocalTests					
