@@ -359,3 +359,12 @@ private static String decryptMemberId(String encryptedMemberId) {
 
 	return decryptedMemberId;
 }
+
+
+
+***********************
+REGEX
+s.replace('+', ''); // заміняє плюс на пусто
+s.replaceAll('[^a-zA-Z0-9\\s+-]', ''); // залишає літери, цифри, пробіли і дефіси
+s.replaceAll('\\s+', '-'); // заміна будь якої кількості пробілів на дефіс
+s.replaceAll('-+', '-'); // заміняє будь яку кількість дефісів на один
