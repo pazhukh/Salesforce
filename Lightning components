@@ -336,6 +336,11 @@ Style Css
 
 /* some comments */
 
+//static resource in community
+.THIS .class {
+      background-image : url('/sfsites/c/resource/PFResources/img/partnerships.jpg');
+}
+
 
 
 ****************************************************************
