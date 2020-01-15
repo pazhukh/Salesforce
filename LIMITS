@@ -1,4 +1,0 @@
-Limits.getDMLStatements(); - скільки DML в одній трансакції
-Limits.getLimitDMLStatements(); - скільки дозволено DML (150)
-test.isRunningTest(); - вертає True or False
-Limits.getDMLRows() - скільки вже було DML в трансакції
