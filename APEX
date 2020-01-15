@@ -340,6 +340,16 @@ public static void sendEmailToContact(Contact contact) {
     }
 
 
+*****************
+get LIMITS
+*****************
+Limits.getDMLStatements(); - скільки DML в одній трансакції
+Limits.getLimitDMLStatements(); - скільки дозволено DML (150)
+test.isRunningTest(); - вертає True or False
+Limits.getDMLRows() - скільки вже було DML в трансакції
+
+
+
 *****************************
 Encrypt/decrypt
 //id in url
