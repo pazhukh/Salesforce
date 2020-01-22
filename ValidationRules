@@ -1,5 +1,13 @@
 ******* TEXT **********
 ***********************
+//remove all text next to ". You can look up ExceptionCode values in the" text
+LEFT(
+  {!$Flow.FaultMessage}, 
+  (FIND(". You can look up ExceptionCode values in the", {!$Flow.FaultMessage})) - 1
+)
+
+
+
 //check if filed containse one of this value and not EMPTY *****
 OR(
 ISBLUNK(locale_country__c),
