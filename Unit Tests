@@ -121,3 +121,14 @@ UserRecordAccess JessieZhaoAccess2 = [
 				WHERE
 					UserId = :UserId AND RecordId = :record.Id
 		];
+
+// Test ChangeDataCapture => Асинхронний Трігер
+//trigger EmployeeChangeTrigger on Employee__ChangeEvent (after insert) {}
+Test.enableChangeDataCapture();
+        
+Employee__c employee = new Employee__c(
+	Last_Name__c = 'Test'
+);
+insert employee;
+
+Test.getEventBus().deliver();
