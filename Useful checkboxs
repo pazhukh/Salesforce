@@ -13,3 +13,7 @@ Session Settings -> Enable secure and persistent browser caching to improve perf
 
 //email alert in sandbox
 Deliverability
+
+
+//завантажувати ContentDocument + ContentDocumentLink (without sharing)
+General Settings=> Allow site guest users to upload files
