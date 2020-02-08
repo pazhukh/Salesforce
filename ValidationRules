@@ -40,7 +40,7 @@ IMAGE("/servlet/servlet.FileDownload?file=015S0000000ysAP", "", 45, 55)
 IF(
 isblank( Facebook__c),
 "",
-IMAGE("/sfc/servlet.shepherd/version/download/0681p000005JlNR", "Facebook")
+IMAGE("/sfc/servlet.shepherd/version/download/" + Facebook__c, "Facebook")
 )
 
 
