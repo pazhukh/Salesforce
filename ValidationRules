@@ -43,6 +43,13 @@ isblank( Facebook__c),
 IMAGE("/sfc/servlet.shepherd/version/download/" + Facebook__c, "Facebook")
 )
 
+//ContentDocument for externals (File)
+IF(
+ISBLANK(DocumentImageId__c),
+"",
+"=IMAGE(\"" + LEFT($Api.Partner_Server_URL_260, FIND( '/services', $Api.Partner_Server_URL_260)) + "servlet/servlet.ImageServer?id="+ DocumentImageId__c + "&oid=" + $Organization.Id +"\",1)"
+)
+
 
 
 
