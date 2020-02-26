@@ -1,3 +1,7 @@
+Good tips
+1. Use DataFactory.cls to create Data for UT in one Place.
+
+
 //сканер на проблеми
 https://security.secure.force.com/security/tools/forcecom/scanner#
 
