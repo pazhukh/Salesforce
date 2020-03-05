@@ -17,3 +17,6 @@ Deliverability
 
 //завантажувати ContentDocument + ContentDocumentLink (without sharing)
 General Settings=> Allow site guest users to upload files
+
+//кому відправляти email
+Apex Exception Email
