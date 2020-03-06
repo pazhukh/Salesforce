@@ -230,3 +230,19 @@ export {
     unregisterAllListeners,
     fireEvent
 };
+
+
+
+/*** load JS or CSS from static resource ***/
+import playersTableCSS from '@salesforce/resourceUrl/playersTableCSS';
+import { loadStyle } from 'lightning/platformResourceLoader';
+
+renderedCallback() {
+        Promise.all([
+            loadStyle(this, playersTableCSS) //specified filename
+        ]).then(() => {
+            window.console.log('Files loaded.');
+        }).catch(error => {
+            window.console.log("Error " + error.body.message);
+        });
+    }
