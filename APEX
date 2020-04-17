@@ -1,6 +1,6 @@
 Good tips
 1. Use DataFactory.cls to create Data for UT in one Place.
-
+2. Check dependency https://movinga--staging.my.salesforce.com/packaging/dependencyPage.apexp?id=00X24000000h6oZ
 
 //сканер на проблеми
 https://security.secure.force.com/security/tools/forcecom/scanner#
