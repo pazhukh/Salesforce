@@ -7,6 +7,12 @@ https://developer.salesforce.com/docs/atlas.en-us.pages.meta/pages/pages_compref
 <apex:pageMessages />
 ApexPages.addMessage(new ApexPages.message(ApexPages.severity.ERROR, e.getMessage()));
 
+//redirect to create of Opportunity choose RT page
+/setup/ui/recordtypeselect.jsp?ent=Opportunity&nooverride=1&retURL=%2F006%2Fo&save_new_url=%2F006%2Fe%3FretURL%3D%252F006%252Fo
+//redirect to create of Opporutnity page
+/006/e?nooverride=1&retURL=%2F006%2Fo&save_new_url=%2F006%2Fe%3FretURL%3D%252F006%252Fo
+
+
 
 ******
 renderAs="PDF"
