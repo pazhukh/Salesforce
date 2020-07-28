@@ -20,3 +20,6 @@ General Settings=> Allow site guest users to upload files
 
 //кому відправляти email
 Apex Exception Email
+
+//показувати розширену сторінку профайлу
+User Management Settings => Enhanced Profile User Interface Turn on/of this
