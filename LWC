@@ -1,3 +1,19 @@
+//put it in top of component
+/**
+ * A myObject item
+ * @typedef myObject
+ * @property {number} id
+ * @property {string} description
+ * @property {boolean} priority
+ */
+ 
+ before declaring a new object put this and when you will be looking for all properties VScode will help you
+/** @type {myObject} */
+newObject = {
+  id
+}
+
+
 ******
 EVENTS
 ******
