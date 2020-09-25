@@ -1,3 +1,6 @@
+//put in jsconfig.json
+"checkJs": true,
+
 //put it in top of component
 /**
  * A myObject item
