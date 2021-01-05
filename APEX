@@ -136,23 +136,20 @@ for(sObject object : myMap.values()){}
 **********************
 Get values of picklist
 public static List<Map<String, String>> getPicklistValues(String sobjApiName, String picklistApiName) {
-	List<Map<String, String>> pickListValues= new List<Map<String, String>>();
+    List<Map<String, String>> pickListValues= new List<Map<String, String>>();
 
-        Schema.SObjectType targetType = Schema.getGlobalDescribe().get(sobjApiName);
-        Sobject newSObject = targetType.newSObject();
-        Schema.sObjectType sobjectType = newSObject.getSObjectType();
-        Schema.DescribeSObjectResult sobjectDescribe = sobjectType.getDescribe();
-        Map<String, Schema.SObjectField> fieldsMap = sobjectDescribe.fields.getMap();
-        List<Schema.PicklistEntry> picklistEntries = fieldsMap.get(picklistApiName).getDescribe().getPickListValues();
+    Sobject newSObject = Schema.getGlobalDescribe().get(sobjApiName).newSObject();
+    Map<String, Schema.SObjectField> fieldsMap = newSObject.getSObjectType().getDescribe().fields.getMap();
+    List<Schema.PicklistEntry> picklistEntries = fieldsMap.get(picklistApiName).getDescribe().getPickListValues();
 
-        for (Schema.PicklistEntry picklistEntry : picklistEntries) {
-            Map<String, String> singleOption = new Map<String, String>();
-            singleOption.put('label', picklistEntry.getLabel());
-            singleOption.put('value', picklistEntry.getValue());
-            pickListValues.add(singleOption);
-        }
-
-        return pickListValues;
+    for (Schema.PicklistEntry picklistEntry : picklistEntries) {
+        Map<String, String> singleOption = new Map<String, String>();
+        singleOption.put('label', picklistEntry.getLabel());
+        singleOption.put('value', picklistEntry.getValue());
+        pickListValues.add(singleOption);
+    }
+    
+    return pickListValues;
 }
 
 **********************
