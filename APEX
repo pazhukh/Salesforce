@@ -396,3 +396,26 @@ s.replace('+', ''); // заміняє плюс на пусто
 s.replaceAll('[^a-zA-Z0-9\\s+-]', ''); // залишає літери, цифри, пробіли і дефіси
 s.replaceAll('\\s+', '-'); // заміна будь якої кількості пробілів на дефіс
 s.replaceAll('-+', '-'); // заміняє будь яку кількість дефісів на один
+
+
+*********************
+Missed fields based on FieldSet
+
+List<Schema.FieldSetMember> requiredFieldsFieldSet = Schema.SObjectType.Opportunity.fieldSets.resend_confirmation_required_fields.getFields();
+
+Opportunity opp = (Opportunity) Database.query(query);
+
+List<String> missedFields = new List<String>();
+for (Schema.FieldSetMember field : requiredFieldsFieldSet) {
+    String fieldName = field.getFieldPath();
+    if (fieldName.contains('.')) {
+	List<String> splitedFields = fieldName.split('\\.');
+	sObject parent = opp.getSobject(splitedFields[0]);
+	if (parent == null || parent.get(splitedFields[1]) == null) {
+	    missedFields.add(fieldName);
+	}
+    } else if (opp.get(fieldName) == null) {
+	missedFields.add(field.getLabel());
+    }
+}
+System.debug('missed fields: ' + missedFields);
