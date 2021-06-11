@@ -419,3 +419,24 @@ for (Schema.FieldSetMember field : requiredFieldsFieldSet) {
     }
 }
 System.debug('missed fields: ' + missedFields);
+
+**********************
+map of all custom objects and their fields
+
+Map<String, Schema.SObjectType> gd = Schema.getGlobalDescribe();
+Map<String, Map<String, String>> objects = new Map<String, Map<String, String>>();
+for(Schema.SObjectType objectType : Schema.getGlobalDescribe().values()){
+    if (!objectType.getDescribe().isCustom()) continue;
+    
+    String objectName = objectType.getDescribe().getName();
+    objects.put(objectName, new Map<String, String>());
+
+    Map<String, Schema.SObjectField> fieldMap = gd.get(objectName).getDescribe().fields.getMap();
+    for (Schema.SObjectField field : fieldMap.values()) {
+        Schema.DescribeFieldResult fieldDescribe = field.getDescribe();
+    	objects.get(objectName).put('name', fieldDescribe.getName());
+        objects.get(objectName).put('type', String.valueOf(fieldDescribe.getType()));
+        objects.get(objectName).put('label', fieldDescribe.getLabel());
+    }
+}
+System.debug(objects);
