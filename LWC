@@ -16,6 +16,13 @@ newObject = {
   id
 }
 
+ 
+// refresh view like Aura
+window["$" + "A"].get('e.force:refreshView').fire();
+
+// Lightning Data Service cache and wires are refreshed
+getRecordNotifyChange([{recordId: this.recordId}]);
+
 
 ******
 EVENTS
