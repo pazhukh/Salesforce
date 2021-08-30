@@ -24,3 +24,9 @@ sfdx force:auth:logout -u AliasName
 targetusername use only if project in VScode do not connect to the org
 sfdx force:source:deploy --sourcepath force-app/main/default/classes/ObjectFactory.cls --testlevel RunSpecifiedTests -r AccountTriggerTest,AbilipayCancellationProcessSchedulerTest
 sfdx force:source:deploy --sourcepath force-app/main/default/classes/AuraControllerOpportunity.cls --targetusername engineering_team@movinga.com --testlevel RunLocalTests					
+
+
+// remove items from list of orgs in SFDX
+https://salesforce.stackexchange.com/questions/181780/removing-old-hub-org-or-non-scratch-org-from-salesforce-dx-org-list
+cd ~/.sfdx
+rm yaroslav.pazhukh@proj.movinga.com.dev.json
