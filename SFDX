@@ -33,3 +33,7 @@ rm yaroslav.pazhukh@proj.movinga.com.dev.json
 
 https://www.lopau.com/how-to-clean-up-the-list-of-orgs-on-forceorglist-on-salesforce-dx/
 sfdx force:auth:logout -u <alias>
+
+
+// After refreshing Sandbox if deploy not working do next
+sfdx config:set restDeploy=false
