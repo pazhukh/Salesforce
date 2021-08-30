@@ -30,3 +30,6 @@ sfdx force:source:deploy --sourcepath force-app/main/default/classes/AuraControl
 https://salesforce.stackexchange.com/questions/181780/removing-old-hub-org-or-non-scratch-org-from-salesforce-dx-org-list
 cd ~/.sfdx
 rm yaroslav.pazhukh@proj.movinga.com.dev.json
+
+https://www.lopau.com/how-to-clean-up-the-list-of-orgs-on-forceorglist-on-salesforce-dx/
+sfdx force:auth:logout -u <alias>
