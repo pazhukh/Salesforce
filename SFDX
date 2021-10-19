@@ -22,7 +22,7 @@ sfdx force:auth:logout -u AliasName
 
 //deploy metadata to Prod
 targetusername use only if project in VScode do not connect to the org
-sfdx force:source:deploy --sourcepath force-app/main/default/classes/ObjectFactory.cls --testlevel RunSpecifiedTests -r AccountTriggerTest,AbilipayCancellationProcessSchedulerTest
+sfdx force:source:deploy -p force-app/main/default/classes/ObjectFactory.cls -l RunSpecifiedTests -r AccountTriggerTest
 sfdx force:source:deploy --sourcepath force-app/main/default/classes/AuraControllerOpportunity.cls --targetusername engineering_team@movinga.com --testlevel RunLocalTests					
 
 
