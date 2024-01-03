@@ -37,3 +37,6 @@ sfdx force:auth:logout -u <alias>
 
 // After refreshing Sandbox if deploy not working do next
 sfdx config:set restDeploy=false
+
+// check dependency
+sf data query -q "SELECT MetadataComponentName, RefMetadataComponentName, RefMetadataComponentType FROM MetadataComponentDependency WHERE MetadataComponentId = '01I090000028B9S'" -t
